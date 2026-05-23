@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Páginas Web Total | Agencia de Ingeniería Web y Visibilidad de IA</title>
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Animaciones AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -25,10 +29,9 @@
                         display: ['Space Grotesk', 'sans-serif'],
                     },
                     colors: {
-                        brandRed: '#ff0000',
-                        brandDarkRed: '#8b0000',
-                        brandBlue: '#000099',
-                        brandElectricBlue: '#0066ff'
+                        brandRed: '#d10000',
+                        brandBlue: '#0000b3',
+                        brandSilver: '#b5b8bd'
                     }
                 }
             }
@@ -36,259 +39,94 @@
     </script>
 
     <style>
-        body {
-            background-color: #05050a;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-        /* Gradientes vivos interactivos basados en el Logo Circular */
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.25) 0%, rgba(0, 0, 153, 0.1) 50%, transparent 100%);
-        }
-        .text-gradient-silver {
-            background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .text-gradient-brand {
-            background: linear-gradient(135deg, #ff3333 0%, #0066ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        /* Tarjetas de Cristal Vivo (Premium Glassmorphism) */
-        .live-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.15, 0.85, 0.33, 1);
-        }
-        .live-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 0, 0, 0.4);
-            box-shadow: 0 30px 60px -15px rgba(255, 0, 0, 0.15), 0 0 50px rgba(0, 102, 255, 0.1);
-            transform: translateY(-8px) scale(1.01);
-        }
-        /* Botones con brillo de alta intensidad */
-        .btn-glow {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .btn-glow:hover {
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
-            transform: scale(1.03);
-        }
-        /* Animación de esferas flotantes de fondo */
-        .orb {
-            filter: blur(120px);
-            mix-blend-mode: screen;
-            animation: float 12s infinite alternate ease-in-out;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px) scale(1); }
-            100% { transform: translateY(40px) scale(1.2); }
-        }
+        body { background-color: #030307; color: #ffffff; overflow-x: hidden; }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 179, 0.08) 50%, transparent 100%); }
+        .text-gradient-brand { background: linear-gradient(135deg, #ff3333 0%, #3377ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-ring { background: linear-gradient(180deg, #e2e8f0 0%, #64748b 50%, #cbd5e1 100%); box-shadow: inset 0 0 4px rgba(0,0,0,0.6), 0 0 15px rgba(209, 0, 0, 0.3); }
+        .logo-center { background: radial-gradient(circle, #ff0000 0%, #800000 70%, #330000 100%); }
+        .live-card { background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.04); transition: all 0.5s cubic-bezier(0.15, 0.85, 0.33, 1); }
+        .live-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(209, 0, 0, 0.4); transform: translateY(-6px); }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(209, 0, 0, 0.5); transform: scale(1.02); }
     </style>
 </head>
 <body class="font-sans antialiased">
 
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-brandRed/20 rounded-full orb pointer-events-none z-0"></div>
-    <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brandBlue/20 rounded-full orb pointer-events-none z-0" style="animation-delay: -4s;"></div>
-
-    <nav class="fixed top-0 w-full z-50 bg-[#05050a]/70 backdrop-blur-xl border-b border-white/5 px-6 md:px-12 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full border-2 border-brandBlue bg-gradient-to-tr from-brandDarkRed via-brandRed to-brandRed flex items-center justify-center shadow-[0_0_20px_rgba(255,0,0,0.5)]">
-                <i class="fas fa-award text-white text-sm"></i>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-[#030307]/70 backdrop-blur-xl border-b border-white/5 px-6 md:px-12 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-10 h-10 rounded-full logo-ring p-[3px] flex items-center justify-center relative">
+                <div class="w-full h-full rounded-full logo-center flex items-center justify-center border border-black/30"></div>
+                <div class="absolute left-0 w-full h-[3px] bg-black/80 top-[18px]"></div>
             </div>
-            <span class="text-xl font-extrabold tracking-tight font-display uppercase">PÁGINAS<span class="text-brandRed">WEBTOTAL</span></span>
+            <div class="flex flex-col">
+                <span class="text-lg font-extrabold tracking-tight font-display uppercase leading-none">PÁGINAS<span class="text-brandRed">WEBTOTAL</span></span>
+                <span class="text-[9px] text-brandSilver uppercase tracking-[0.25em] font-medium mt-0.5 font-display">Calidad Certificada</span>
+            </div>
         </div>
-        
-        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide text-gray-300">
-            <a href="#soluciones" class="hover:text-brandRed transition-colors">Soluciones</a>
-            <a href="#experiencia" class="hover:text-brandBlue transition-colors">Garantía Técnica</a>
-            <a href="#contacto" class="btn-glow bg-gradient-to-r from-brandRed to-brandBlue text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Agendar Consultoría</a>
-        </div>
-
-        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none text-2xl" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#05050a]/95 border-b border-white/10 backdrop-blur-2xl flex flex-col p-6 space-y-4 text-center font-bold text-lg transition-all duration-300">
-            <a href="#soluciones" class="py-2 hover:text-brandRed transition">Soluciones</a>
-            <a href="#experiencia" class="py-2 hover:text-brandBlue transition">Garantía Técnica</a>
-            <a href="#contacto" class="bg-gradient-to-r from-brandRed to-brandBlue py-3 rounded-full text-sm uppercase tracking-wider text-white">Agendar Consultoría</a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+            <a href="#soluciones" class="hover:text-brandRed transition">Soluciones</a>
+            <a href="#experiencia" class="hover:text-brandBlue transition">Garantía Técnica</a>
+            <a href="#soporte" class="btn-glow bg-gradient-to-r from-brandRed to-brandBlue text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300">Chat en Vivo</a>
         </div>
     </nav>
 
+    <!-- HERO -->
     <header class="relative min-h-screen flex items-center justify-center hero-gradient pt-24 px-6 overflow-hidden">
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            
-            <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest text-gray-300 mb-8 backdrop-blur-md">
-                <span class="w-2.5 h-2.5 rounded-full bg-brandRed animate-ping"></span>
-                <span>Calidad Certificada & Alta Ingeniería Digital</span>
+            <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-8 backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-brandRed animate-pulse"></span>
+                <span>[ SISTEMA DE SEGURIDAD ACTIVO: ZERO INJECTION ]</span>
             </div>
-
-            <h1 data-aos="zoom-in" data-aos-delay="200" class="text-4xl sm:text-6xl md:text-8xl font-extrabold font-display tracking-tight leading-[1.05] mb-8">
-                Creamos Sitios Inolvidables.<br>
-                <span class="text-gradient-brand">Dominamos la IA.</span>
+            <h1 data-aos="zoom-in" data-aos-delay="200" class="text-5xl md:text-8xl font-extrabold font-display tracking-tight leading-none mb-8">
+                Interfaces Blindadas.<br>
+                <span class="text-gradient-brand">Rendimiento Extremo.</span>
             </h1>
-
-            <p data-aos="fade-up" data-aos-delay="400" class="text-gray-400 text-lg sm:text-2xl max-w-3xl mx-auto font-light leading-relaxed mb-12">
-                Fusionamos un diseño visualmente deslumbrante con optimización de código extrema para <span class="text-white font-semibold">Core Web Vitals</span>, garantizando que su negocio destaque ante humanos y algoritmos generativos (SEO · GEO · AEO).
+            <p data-aos="fade-up" data-aos-delay="400" class="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
+                Arquitecturas web estáticas e invulnerables optimizadas para <strong>Core Web Vitals</strong> y motores de IA.
             </p>
-
-            <div data-aos="fade-up" data-aos-delay="600" class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-                <a href="#soluciones" class="btn-glow text-center bg-white text-black font-extrabold px-8 py-4 rounded-full transition shadow-lg text-sm uppercase tracking-wider">Ver Soluciones</a>
-                <a href="#contacto" class="btn-glow text-center border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold px-8 py-4 rounded-full transition text-sm uppercase tracking-wider">Analizar Mi Sitio</a>
+            <div data-aos="fade-up" data-aos-delay="600" class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#soluciones" class="btn-glow bg-white text-black font-extrabold px-10 py-4 rounded-full text-xs uppercase tracking-widest transition">Ver Servicios</a>
+                <a href="#soporte" class="border border-white/20 bg-white/5 text-white font-extrabold px-10 py-4 rounded-full text-xs uppercase tracking-widest transition">Contactar</a>
             </div>
         </div>
-
-        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#05050a] to-transparent"></div>
     </header>
 
-    <section id="soluciones" class="py-24 px-6 relative z-10 max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 data-aos="fade-up" class="text-3xl md:text-5xl font-bold font-display mb-4">Ingeniería Web Premium</h2>
-            <p data-aos="fade-up" data-aos-delay="200" class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">Infraestructuras de software modernas con un acabado visual perfecto e interactivo.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div data-aos="fade-up" class="live-card rounded-3xl overflow-hidden flex flex-col h-full">
-                <div class="relative h-60 w-full overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-transparent to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426" alt="Desarrollo Web Premium" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <span class="absolute top-4 left-4 z-20 bg-brandRed text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Premium UX</span>
-                </div>
-                <div class="p-8 flex-grid flex-col justify-between flex-1">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3 font-display">Desarrollo Web Corporativo</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Sitios dinámicos, adaptables a móviles y diseñados para retener clientes mediante experiencias interactivas inmediatas.</p>
-                    </div>
-                </div>
+    <!-- SECCIÓN DE SOPORTE (REEMPLAZA AL FORMULARIO) -->
+    <section id="soporte" class="py-32 px-6 relative z-10 max-w-4xl mx-auto">
+        <div class="live-card p-16 rounded-[3rem] text-center" data-aos="zoom-in">
+            <div class="mb-8 inline-flex w-20 h-20 rounded-full bg-brandRed/10 border border-brandRed/20 items-center justify-center text-brandRed text-3xl">
+                <i class="fas fa-shield-alt"></i>
             </div>
-
-            <div data-aos="fade-up" data-aos-delay="200" class="live-card rounded-3xl overflow-hidden flex flex-col h-full border-brandBlue/30">
-                <div class="relative h-60 w-full overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-transparent to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070" alt="Core Web Vitals Data" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <span class="absolute top-4 left-4 z-20 bg-brandBlue text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Core Web Vitals</span>
-                </div>
-                <div class="p-8 flex-grid flex-col justify-between flex-1">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3 font-display text-gradient-silver">Hiper-Optimización SEO</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Auditorías masivas (más de 120 URLs simultáneas) enfocadas en velocidad crítica, estructuración de datos y enlazado inteligente.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div data-aos="fade-up" data-aos-delay="400" class="live-card rounded-3xl overflow-hidden flex flex-col h-full">
-                <div class="relative h-60 w-full overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-transparent to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564" alt="AI Engine Optimization" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <span class="absolute top-4 left-4 z-20 bg-gradient-to-r from-brandRed to-brandBlue text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">AEO & GEO</span>
-                </div>
-                <div class="p-8 flex-grid flex-col justify-between flex-1">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-3 font-display">Alineación con Motores de IA</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Modelamos arquitecturas semánticas utilizando flujos avanzados para asegurar que los modelos LLM (ChatGPT, Gemini) citen su negocio.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="experiencia" class="py-24 bg-gradient-to-b from-[#05050a] via-brandDarkRed/5 to-[#05050a] px-6 relative z-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            <div data-aos="fade-right" class="relative group rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-                <div class="absolute inset-0 bg-brandRed/10 mix-blend-multiply z-10 transition duration-500 group-hover:bg-transparent"></div>
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070" alt="Equipo de Ingeniería" class="w-full object-cover h-[450px] transition duration-700 group-hover:scale-105">
-            </div>
-
-            <div data-aos="fade-left">
-                <span class="text-brandRed text-xs font-bold uppercase tracking-widest font-display block mb-2">// RESPALDO PROFESIONAL</span>
-                <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">Infraestructura Web con Calidad Certificada.</h2>
-                <p class="text-gray-400 leading-relaxed mb-8">
-                    Unificamos metodologías ágiles de datos y automatización avanzada con scripts personalizados de minería en Python para estructurar clústeres de palabras clave a gran escala, garantizando escalabilidad absoluta.
+            <h2 class="text-4xl font-bold font-display mb-6">Canal de Comunicación Seguro</h2>
+            <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                Para garantizar la integridad de nuestros sistemas y evitar ataques de inyección, hemos deshabilitado formularios de entrada de texto tradicionales.
+            </p>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 inline-block">
+                <p class="text-white font-semibold flex items-center justify-center gap-3">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                    Utilice la burbuja de chat inferior para soporte en tiempo real.
                 </p>
-
-                <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-8 font-display">
-                    <div>
-                        <span class="text-4xl md:text-5xl font-extrabold text-brandRed block">32</span>
-                        <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Certificaciones Especializadas</span>
-                    </div>
-                    <div>
-                        <span class="text-4xl md:text-5xl font-extrabold text-brandBlue block">120+</span>
-                        <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">URLs Auditadas por Proyecto</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-24 px-6 relative z-10 max-w-3xl mx-auto">
-        <div class="live-card p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden" data-aos="zoom-in">
-            <div class="absolute top-0 right-0 w-40 h-40 bg-brandBlue/10 rounded-full blur-2xl"></div>
-            
-            <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-bold font-display mb-3">Inicie su Transformación Digital</h2>
-                <p class="text-gray-400 text-sm">Diseño de vanguardia, automatización impecable y visibilidad total garantizada.</p>
-            </div>
-
-            <form action="#" method="POST" class="space-y-6 font-display">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Nombre Completo</label>
-                        <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brandRed transition">
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Correo Corporativo</label>
-                        <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brandBlue transition">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Mensaje / Requerimiento del Proyecto</label>
-                    <textarea rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brandRed transition"></textarea>
-                </div>
-                <button type="submit" class="w-full btn-glow bg-gradient-to-r from-brandRed to-brandBlue py-4 rounded-xl text-sm font-bold uppercase tracking-widest text-white transition">
-                    Enviar Solicitud de Consultoría
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-white/5 text-center text-xs text-gray-500 tracking-widest font-display relative z-10">
-        <div class="flex justify-center space-x-6 mb-6 text-base text-gray-400">
-            <a href="#" class="hover:text-brandRed transition"><i class="fab fa-github"></i></a>
-            <a href="#" class="hover:text-brandBlue transition"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p class="uppercase">PÁGINAS WEB TOTAL — CALIDAD CERTIFICADA © 2026</p>
+    <footer class="py-12 text-center text-[10px] text-gray-600 tracking-[0.3em] font-display uppercase border-t border-white/5">
+        PÁGINAS WEB TOTAL — SEGURIDAD CERTIFICADA © 2026
     </footer>
 
-    <script>
-        // Inicializar Animaciones de Scroll
-        AOS.init({
-            duration: 800,
-            once: true,
-            anchorPlacement: 'top-bottom',
-        });
+    <script>AOS.init({ duration: 800, once: true });</script>
 
-        // Menú Desplegable Móvil Funcional e Interactivo
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Cerrar menú al hacer clic en un enlace (Móvil)
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+    <!-- Tawk.to Script Integrado -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/559af6248658396a41e44f75/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
     </script>
 </body>
 </html>
