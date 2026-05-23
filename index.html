@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Páginas Web Total | Agencia de Ingeniería Web y Visibilidad de IA</title>
+    <title>Páginas Web Total | Next-Gen AI & Web Architecture</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Iconos FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Animaciones AOS -->
+    <!-- Locomotive Scroll / Framer Motion vibes con AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -24,99 +19,196 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        brandRed: '#d10000',
-                        brandBlue: '#0000b3',
-                        brandSilver: '#b5b8bd'
-                    }
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brandRed: '#d10000', brandBlue: '#0000b3', darkDeep: '#020205' }
                 }
             }
         }
     </script>
 
     <style>
-        body { background-color: #030307; color: #ffffff; overflow-x: hidden; }
-        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(209, 0, 0, 0.2) 0%, rgba(0, 0, 179, 0.08) 50%, transparent 100%); }
-        .text-gradient-brand { background: linear-gradient(135deg, #ff3333 0%, #3377ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .logo-ring { background: linear-gradient(180deg, #e2e8f0 0%, #64748b 50%, #cbd5e1 100%); box-shadow: inset 0 0 4px rgba(0,0,0,0.6), 0 0 15px rgba(209, 0, 0, 0.3); }
-        .logo-center { background: radial-gradient(circle, #ff0000 0%, #800000 70%, #330000 100%); }
-        .live-card { background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.04); transition: all 0.5s cubic-bezier(0.15, 0.85, 0.33, 1); }
-        .live-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(209, 0, 0, 0.4); transform: translateY(-6px); }
-        .btn-glow:hover { box-shadow: 0 0 25px rgba(209, 0, 0, 0.5); transform: scale(1.02); }
+        :root { --accent: #d10000; }
+        body { background-color: #020205; color: #fff; overflow-x: hidden; }
+        
+        /* Efecto 3D y Profundidad */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-mesh {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(209, 0, 0, 0.15) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(0, 0, 179, 0.15) 0, transparent 50%);
+        }
+
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #fff 20%, #d10000 50%, #0000b3 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 8s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        /* Cursor Custom o Interacción de Botones */
+        .btn-3d {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-3d:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 30px rgba(209, 0, 0, 0.3); }
+        
+        /* Logo glow */
+        .logo-glow { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); transition: 0.5s; }
+        .logo-glow:hover { filter: drop-shadow(0 0 15px rgba(209, 0, 0, 0.6)); transform: rotate(5deg); }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans">
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full z-50 bg-[#030307]/70 backdrop-blur-xl border-b border-white/5 px-6 md:px-12 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3.5">
-            <div class="w-10 h-10 rounded-full logo-ring p-[3px] flex items-center justify-center relative">
-                <div class="w-full h-full rounded-full logo-center flex items-center justify-center border border-black/30"></div>
-                <div class="absolute left-0 w-full h-[3px] bg-black/80 top-[18px]"></div>
+    <!-- NAVBAR INTERACTIVA -->
+    <nav class="fixed top-0 w-full z-[100] px-6 py-4 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-panel px-6 py-3 rounded-2xl">
+            <div class="flex items-center space-x-3">
+                <img src="logopaginaswebtotal_2.jpg" alt="Logo" class="w-10 h-10 rounded-full logo-glow">
+                <div class="flex flex-col leading-none">
+                    <span class="text-sm font-black tracking-tighter uppercase font-display">PÁGINAS<span class="text-brandRed">WEBTOTAL</span></span>
+                    <span class="text-[8px] text-gray-500 tracking-[0.3em] font-bold">EST. 2026</span>
+                </div>
             </div>
-            <div class="flex flex-col">
-                <span class="text-lg font-extrabold tracking-tight font-display uppercase leading-none">PÁGINAS<span class="text-brandRed">WEBTOTAL</span></span>
-                <span class="text-[9px] text-brandSilver uppercase tracking-[0.25em] font-medium mt-0.5 font-display">Calidad Certificada</span>
+            <div class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#tech" class="hover:text-white transition">Ingeniería</a>
+                <a href="#bento" class="hover:text-white transition">Visibilidad</a>
+                <a href="#contacto" class="text-white border-b-2 border-brandRed pb-1">Conectar</a>
             </div>
-        </div>
-        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
-            <a href="#soluciones" class="hover:text-brandRed transition">Soluciones</a>
-            <a href="#experiencia" class="hover:text-brandBlue transition">Garantía Técnica</a>
-            <a href="#soporte" class="btn-glow bg-gradient-to-r from-brandRed to-brandBlue text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300">Chat en Vivo</a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="relative min-h-screen flex items-center justify-center hero-gradient pt-24 px-6 overflow-hidden">
-        <div class="max-w-6xl mx-auto text-center relative z-10">
-            <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-8 backdrop-blur-md">
-                <span class="w-2.5 h-2.5 rounded-full bg-brandRed animate-pulse"></span>
-                <span>[ SISTEMA DE SEGURIDAD ACTIVO: ZERO INJECTION ]</span>
+    <!-- HERO 2026 -->
+    <section class="relative min-h-screen flex items-center justify-center hero-mesh pt-20 px-6">
+        <div class="max-w-6xl mx-auto text-center z-10">
+            <div data-aos="zoom-out" class="inline-block glass-panel px-4 py-2 rounded-full mb-8">
+                <span class="text-[10px] font-bold tracking-[0.2em] text-brandRed flex items-center gap-3">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandRed opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brandRed"></span>
+                    </span>
+                    SISTEMA DE CALIDAD TÉCNICA ACTIVO
+                </span>
             </div>
-            <h1 data-aos="zoom-in" data-aos-delay="200" class="text-5xl md:text-8xl font-extrabold font-display tracking-tight leading-none mb-8">
-                Interfaces Blindadas.<br>
-                <span class="text-gradient-brand">Rendimiento Extremo.</span>
+
+            <h1 data-aos="fade-up" class="text-5xl md:text-9xl font-black font-display tracking-tight leading-[0.9] mb-10">
+                <span class="gradient-text">Arquitectura</span><br>
+                Web de Élite.
             </h1>
-            <p data-aos="fade-up" data-aos-delay="400" class="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
-                Arquitecturas web estáticas e invulnerables optimizadas para <strong>Core Web Vitals</strong> y motores de IA.
+
+            <p data-aos="fade-up" data-aos-delay="200" class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light mb-12">
+                Desplegamos ecosistemas digitales donde la **velocidad de carga** y la **visibilidad en IA** convergen en una sola estructura invulnerable.
             </p>
-            <div data-aos="fade-up" data-aos-delay="600" class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#soluciones" class="btn-glow bg-white text-black font-extrabold px-10 py-4 rounded-full text-xs uppercase tracking-widest transition">Ver Servicios</a>
-                <a href="#soporte" class="border border-white/20 bg-white/5 text-white font-extrabold px-10 py-4 rounded-full text-xs uppercase tracking-widest transition">Contactar</a>
+
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap justify-center gap-6">
+                <a href="#contacto" class="btn-3d bg-white text-black font-black px-10 py-5 rounded-xl text-xs uppercase tracking-widest">Iniciar Proyecto</a>
+                <div class="flex items-center gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest px-6 border-l border-white/10">
+                    <span>Protocolo 2026</span>
+                </div>
             </div>
         </div>
-    </header>
-
-    <!-- SECCIÓN DE SOPORTE (REEMPLAZA AL FORMULARIO) -->
-    <section id="soporte" class="py-32 px-6 relative z-10 max-w-4xl mx-auto">
-        <div class="live-card p-16 rounded-[3rem] text-center" data-aos="zoom-in">
-            <div class="mb-8 inline-flex w-20 h-20 rounded-full bg-brandRed/10 border border-brandRed/20 items-center justify-center text-brandRed text-3xl">
-                <i class="fas fa-shield-alt"></i>
-            </div>
-            <h2 class="text-4xl font-bold font-display mb-6">Canal de Comunicación Seguro</h2>
-            <p class="text-gray-400 text-lg mb-10 leading-relaxed">
-                Para garantizar la integridad de nuestros sistemas y evitar ataques de inyección, hemos deshabilitado formularios de entrada de texto tradicionales.
-            </p>
-            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 inline-block">
-                <p class="text-white font-semibold flex items-center justify-center gap-3">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
-                    Utilice la burbuja de chat inferior para soporte en tiempo real.
-                </p>
-            </div>
+        
+        <!-- Elemento 3D abstracto flotante -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20 floating">
+            <i class="fa-solid fa-cube text-9xl"></i>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-[10px] text-gray-600 tracking-[0.3em] font-display uppercase border-t border-white/5">
-        PÁGINAS WEB TOTAL — SEGURIDAD CERTIFICADA © 2026
+    <!-- BENTO GRID INTERACTIVO -->
+    <section id="bento" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+            
+            <div data-aos="fade-right" class="md:col-span-2 glass-panel rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity">
+                    <i class="fas fa-brain text-9xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold font-display mb-4 italic">Optimización AEO</h3>
+                <p class="text-gray-400 text-sm">Preparamos su contenido para ser la fuente principal de respuestas en motores de Inteligencia Artificial.</p>
+            </div>
+
+            <div data-aos="fade-down" class="glass-panel rounded-[2rem] p-10 flex flex-col items-center justify-center text-center">
+                <div class="text-4xl font-black text-brandRed mb-2 font-display">32</div>
+                <div class="text-[9px] font-bold tracking-widest text-gray-500 uppercase">Procesos de Auditoría</div>
+            </div>
+
+            <div data-aos="fade-left" class="glass-panel rounded-[2rem] p-10 flex flex-col items-center justify-center text-center bg-brandBlue/10">
+                <i class="fas fa-bolt text-3xl mb-4 text-brandBlue"></i>
+                <div class="text-[9px] font-bold tracking-widest uppercase">Performance 100/100</div>
+            </div>
+
+            <div data-aos="fade-up" class="md:col-span-2 glass-panel rounded-[2rem] p-10 flex flex-col justify-end border-brandRed/20">
+                <h3 class="text-2xl font-bold font-display mb-4">Ingeniería Web Estática</h3>
+                <p class="text-gray-400 text-sm">Sitios blindados contra inyecciones SQL y ataques XSS, desplegados en la red global de Cloudflare.</p>
+            </div>
+
+            <div data-aos="fade-left" class="md:col-span-2 glass-panel rounded-[2rem] p-10 flex flex-col justify-end">
+                <h3 class="text-2xl font-bold font-display mb-4">Estrategia SEO Global</h3>
+                <p class="text-gray-400 text-sm">Escalamos su presencia con arquitecturas de enlaces y clusters de contenido automatizados.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO SEGURO -->
+    <section id="contacto" class="py-32 px-6 text-center">
+        <div data-aos="zoom-in" class="max-w-4xl mx-auto glass-panel p-16 rounded-[3rem] border-brandRed/30 relative">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-brandRed rounded-full flex items-center justify-center shadow-xl shadow-brandRed/40">
+                <i class="fas fa-headset text-2xl"></i>
+            </div>
+            <h2 class="text-4xl font-black font-display mb-6">¿Hablamos de su próximo hito?</h2>
+            <p class="text-gray-400 mb-12 text-lg">
+                Para mantener la máxima agilidad y seguridad, operamos mediante consultoría directa. 
+                Sin formularios, sin demoras.
+            </p>
+            
+            <div class="inline-block px-8 py-4 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-xs font-bold tracking-widest text-brandBlue flex items-center gap-4">
+                    SOPORTE EN VIVO ACTIVO 
+                    <span class="flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-brandBlue opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-brandBlue"></span>
+                    </span>
+                </span>
+            </div>
+            <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-[0.4em]">Inicie el chat en la esquina inferior</p>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-[9px] text-gray-700 tracking-[0.5em] font-display uppercase">
+        PÁGINAS WEB TOTAL — NEXT-GEN WEB AGENCY — 2026
     </footer>
 
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        // Efecto Navbar al hacer Scroll
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.firstElementChild.classList.add('bg-black/90');
+            } else {
+                nav.classList.remove('py-2');
+                nav.firstElementChild.classList.remove('bg-black/90');
+            }
+        };
+    </script>
 
-    <!-- Tawk.to Script Integrado -->
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -128,5 +220,7 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
+    <!--End of Tawk.to Script-->
+
 </body>
 </html>
