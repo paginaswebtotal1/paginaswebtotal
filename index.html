@@ -1,226 +1,956 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Páginas Web Total | Next-Gen AI & Web Architecture</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Locomotive Scroll / Framer Motion vibes con AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Páginas Web Total | Agencia de Posicionamiento Web & SEO Avanzado</title>
+<meta name="description" content="Agencia especializada en posicionamiento web, SEO técnico, GEO y visibilidad en motores de búsqueda generativa: Google AI Overviews, ChatGPT, Perplexity, Gemini.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Páginas Web Total | SEO & GEO Agency">
+<meta property="og:description" content="Posicionamos tu negocio en Google, Bing, ChatGPT, Gemini, Perplexity y AI Overviews.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  :root {
+    --black: #030712;
+    --white: #f8fafc;
+    --red: #e11d48;
+    --red-dark: #9f1239;
+    --red-glow: rgba(225,29,72,0.35);
+    --silver: #94a3b8;
+    --silver-light: #cbd5e1;
+    --surface: #0f172a;
+    --surface2: #1e293b;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    cursor: none;
+  }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
-                    colors: { brandRed: '#d10000', brandBlue: '#0000b3', darkDeep: '#020205' }
-                }
-            }
-        }
-    </script>
+  /* ── CUSTOM CURSOR ── */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--red);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+    mix-blend-mode: normal;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1.5px solid rgba(225,29,72,0.5);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s;
+  }
+  body:hover .cursor { opacity: 1; }
 
-    <style>
-        :root { --accent: #d10000; }
-        body { background-color: #020205; color: #fff; overflow-x: hidden; }
-        
-        /* Efecto 3D y Profundidad */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero-mesh {
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(209, 0, 0, 0.15) 0, transparent 50%), 
-                radial-gradient(at 100% 100%, rgba(0, 0, 179, 0.15) 0, transparent 50%);
-        }
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
 
-        .floating { animation: float 6s ease-in-out infinite; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(3,7,18,0.82);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--red); object-fit: cover; }
+  .nav-logo span { font-family: var(--font-display); font-weight: 800; font-size: 1rem; letter-spacing: -0.02em; color: var(--white); line-height: 1.1; }
+  .nav-logo span em { color: var(--red); font-style: normal; display: block; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--silver); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red); color: #fff;
+    padding: 10px 22px; border-radius: 4px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+    text-decoration: none; text-transform: uppercase;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover { background: var(--red-dark); box-shadow: 0 0 20px var(--red-glow); }
 
-        .gradient-text {
-            background: linear-gradient(to right, #fff 20%, #d10000 50%, #0000b3 80%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 8s linear infinite;
-        }
-        @keyframes shine { to { background-position: 200% center; } }
+  /* hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 26px; height: 2px; background: var(--white); transition: 0.3s; }
 
-        /* Cursor Custom o Interacción de Botones */
-        .btn-3d {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-3d:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 30px rgba(209, 0, 0, 0.3); }
-        
-        /* Logo glow */
-        .logo-glow { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); transition: 0.5s; }
-        .logo-glow:hover { filter: drop-shadow(0 0 15px rgba(209, 0, 0, 0.6)); transform: rotate(5deg); }
-    </style>
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh; display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative; overflow: hidden;
+    gap: 40px;
+  }
+  #hero-canvas { position: absolute; right: 0; top: 0; width: 52%; height: 100%; z-index: 0; }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(225,29,72,0.12);
+    border: 1px solid rgba(225,29,72,0.3);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+    color: var(--red); text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    font-weight: 800; line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero-title .line-red { color: var(--red); display: block; }
+  .hero-sub {
+    font-size: 1.05rem; font-weight: 300; color: var(--silver-light);
+    line-height: 1.7; max-width: 480px;
+    margin-bottom: 36px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 1s 0.3s ease both; }
+  .btn-primary {
+    background: var(--red); color: #fff;
+    padding: 14px 30px; border-radius: 4px;
+    font-size: 0.88rem; font-weight: 600; letter-spacing: 0.05em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.25s;
+    box-shadow: 0 4px 24px rgba(225,29,72,0.4);
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(225,29,72,0.55); }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    padding: 14px 30px; border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--red); color: var(--red); }
+
+  .hero-stats {
+    display: flex; gap: 36px; margin-top: 52px;
+    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .stat-item .stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--red); }
+  .stat-item .stat-label { font-size: 0.75rem; color: var(--silver); letter-spacing: 0.05em; margin-top: 2px; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── AI ENGINES TICKER ── */
+  .engines-bar {
+    background: var(--surface);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 14px 0; overflow: hidden;
+  }
+  .ticker-track {
+    display: flex; gap: 60px; align-items: center;
+    animation: ticker 22s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .ticker-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.07em;
+    color: var(--silver); text-transform: uppercase; flex-shrink: 0;
+  }
+  .ticker-item img { width: 20px; height: 20px; object-fit: contain; filter: grayscale(0.3); }
+  .ticker-sep { color: var(--red); font-size: 1rem; flex-shrink: 0; }
+
+  /* ── SECTIONS SHARED ── */
+  section { padding: 100px 5%; position: relative; z-index: 2; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    color: var(--red); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-sub { color: var(--silver-light); font-weight: 300; line-height: 1.75; max-width: 600px; font-size: 1rem; margin-bottom: 60px; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--black); }
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .service-card {
+    background: var(--surface);
+    padding: 44px 36px;
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--red);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover { background: var(--surface2); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 10px;
+    background: rgba(225,29,72,0.12);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px; font-size: 1.6rem;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .service-card:hover .service-icon { background: rgba(225,29,72,0.22); transform: scale(1.05); }
+  .service-card h3 { font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; margin-bottom: 12px; }
+  .service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.7; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+  .tag {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--silver-light); font-size: 0.68rem; letter-spacing: 0.06em;
+    padding: 4px 10px; border-radius: 100px; text-transform: uppercase;
+  }
+
+  /* ── WHY US ── */
+  #why { background: var(--surface); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .why-visual {
+    position: relative; height: 420px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-ring {
+    width: 300px; height: 300px; border-radius: 50%;
+    border: 1px solid rgba(225,29,72,0.2);
+    position: relative; animation: rotate 18s linear infinite;
+  }
+  .why-ring::before {
+    content: '';
+    position: absolute; top: -3px; left: 50%; transform: translateX(-50%);
+    width: 6px; height: 6px; border-radius: 50%; background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+  }
+  .why-ring2 {
+    position: absolute; width: 200px; height: 200px; border-radius: 50%;
+    border: 1px solid rgba(225,29,72,0.12);
+    animation: rotate 12s linear infinite reverse;
+  }
+  .why-core {
+    position: absolute; width: 100px; height: 100px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(225,29,72,0.3), transparent 70%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-core img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+  @keyframes rotate { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+  .why-points { display: flex; flex-direction: column; gap: 24px; }
+  .why-point { display: flex; gap: 18px; align-items: flex-start; }
+  .why-num {
+    font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+    color: rgba(225,29,72,0.2); line-height: 1; flex-shrink: 0; width: 44px;
+  }
+  .why-point h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+  .why-point p { color: var(--silver); font-size: 0.88rem; line-height: 1.65; }
+
+  /* ── GEO ENGINES ── */
+  #geo { background: var(--black); }
+  .geo-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 0; }
+  .engine-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; padding: 32px 24px;
+    text-align: center; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .engine-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(225,29,72,0.15), transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .engine-card:hover { border-color: rgba(225,29,72,0.3); transform: translateY(-4px); }
+  .engine-card:hover::after { opacity: 1; }
+  .engine-logo {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px; overflow: hidden;
+  }
+  .engine-logo img { width: 36px; height: 36px; object-fit: contain; }
+  .engine-card h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .engine-card p { color: var(--silver); font-size: 0.82rem; line-height: 1.6; }
+
+  /* ── PROCESS ── */
+  #process { background: var(--surface); }
+  .process-steps { display: flex; flex-direction: column; gap: 0; }
+  .process-step {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 0 32px; padding: 36px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+    border-radius: 4px;
+  }
+  .process-step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: var(--font-display); font-size: 3rem; font-weight: 800;
+    color: rgba(225,29,72,0.15); text-align: right;
+    line-height: 1; padding-top: 4px;
+    transition: color 0.3s;
+  }
+  .process-step:hover .step-num { color: rgba(225,29,72,0.4); }
+  .step-content { padding-left: 0; }
+  .step-content h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+  .step-content p { color: var(--silver); font-size: 0.9rem; line-height: 1.7; max-width: 700px; }
+
+  /* ── EXPERTISE SKILLS ── */
+  #skills { background: var(--black); }
+  .skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .skill-item {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; padding: 24px 20px;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 12px; transition: all 0.3s;
+  }
+  .skill-item:hover { border-color: rgba(225,29,72,0.3); transform: translateY(-3px); }
+  .skill-item img { width: 36px; height: 36px; object-fit: contain; }
+  .skill-item span { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; color: var(--silver-light); text-transform: uppercase; }
+
+  /* ── RESULTS TICKER ── */
+  .results-section {
+    background: var(--red);
+    padding: 60px 5%;
+    text-align: center;
+  }
+  .results-row { display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; }
+  .result-item .result-num {
+    font-family: var(--font-display); font-size: 3.2rem; font-weight: 800; line-height: 1;
+  }
+  .result-item .result-label { font-size: 0.82rem; letter-spacing: 0.08em; opacity: 0.85; margin-top: 6px; text-transform: uppercase; }
+
+  /* ── CTA ── */
+  #contact {
+    background: var(--black); text-align: center; padding: 120px 5%;
+    position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(225,29,72,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  #contact .section-title { font-size: clamp(2.2rem,4vw,3.8rem); margin-bottom: 20px; }
+  .contact-sub { color: var(--silver-light); font-size: 1.05rem; font-weight: 300; margin-bottom: 40px; max-width: 580px; margin-inline: auto; }
+  .contact-form {
+    max-width: 520px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .contact-form input, .contact-form textarea, .contact-form select {
+    background: var(--surface); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); padding: 14px 18px; border-radius: 6px;
+    font-family: var(--font-body); font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+    resize: none;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--silver); }
+  .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--red); }
+  .contact-form select option { background: var(--surface); }
+  .contact-form button {
+    background: var(--red); color: #fff;
+    padding: 16px 32px; border: none; border-radius: 6px;
+    font-family: var(--font-body); font-size: 0.92rem; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.25s;
+    box-shadow: 0 4px 24px rgba(225,29,72,0.4);
+  }
+  .contact-form button:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(225,29,72,0.55); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface); padding: 40px 5%;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+  }
+  .footer-left { display: flex; align-items: center; gap: 12px; }
+  .footer-left img { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--red); }
+  .footer-brand { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; }
+  .footer-brand span { color: var(--red); }
+  .footer-copy { color: var(--silver); font-size: 0.78rem; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; text-align: center; }
+    #hero-canvas { width: 100%; opacity: 0.3; height: 50%; top: auto; bottom: 0; }
+    .hero-stats { justify-content: center; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-visual { height: 260px; }
+    .geo-grid { grid-template-columns: repeat(2,1fr); }
+    .skills-grid { grid-template-columns: repeat(2,1fr); }
+    .results-row { gap: 40px; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    #hero { padding-top: 100px; }
+  }
+  @media (max-width: 540px) {
+    .geo-grid { grid-template-columns: 1fr 1fr; }
+    .hero-buttons { justify-content: center; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  /* mobile nav open */
+  .nav-open .nav-links, .nav-open .nav-cta {
+    display: flex; flex-direction: column;
+    position: fixed; inset: 0; top: 72px;
+    background: rgba(3,7,18,0.98);
+    justify-content: center; align-items: center; gap: 32px;
+    font-size: 1.2rem; z-index: 999;
+  }
+  .nav-open .nav-cta { position: static; margin-top: -16px; }
+
+  /* scroll reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* floating badge */
+  .float-badge {
+    position: fixed; bottom: 100px; right: 24px;
+    background: var(--red); color: #fff;
+    padding: 10px 16px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; z-index: 900;
+    animation: floatBadge 3s ease-in-out infinite;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(225,29,72,0.5);
+    display: flex; align-items: center; gap: 8px;
+  }
+  @keyframes floatBadge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+</style>
 </head>
-<body class="font-sans">
+<body>
 
-    <!-- NAVBAR INTERACTIVA -->
-    <nav class="fixed top-0 w-full z-[100] px-6 py-4 transition-all duration-500" id="navbar">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass-panel px-6 py-3 rounded-2xl">
-            <div class="flex items-center space-x-3">
-                <img src="logopaginaswebtotal_2.jpg" alt="Logo" class="w-10 h-10 rounded-full logo-glow">
-                <div class="flex flex-col leading-none">
-                    <span class="text-sm font-black tracking-tighter uppercase font-display">PÁGINAS<span class="text-brandRed">WEBTOTAL</span></span>
-                    <span class="text-[8px] text-gray-500 tracking-[0.3em] font-bold">EST. 2026</span>
-                </div>
-            </div>
-            <div class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-                <a href="#tech" class="hover:text-white transition">Ingeniería</a>
-                <a href="#bento" class="hover:text-white transition">Visibilidad</a>
-                <a href="#contacto" class="text-white border-b-2 border-brandRed pb-1">Conectar</a>
-            </div>
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- FLOAT BADGE -->
+<a href="#contact" class="float-badge">🚀 Cotiza tu proyecto</a>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <img src="data:image/jpeg;base64,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" alt="Páginas Web Total Logo">
+    <span>Páginas Web Total <em>SEO & GEO Agency</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#geo">GEO</a></li>
+    <li><a href="#process">Proceso</a></li>
+    <li><a href="#skills">Expertise</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Cotiza Gratis</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">🔴 Agencia activa — Posicionamos desde 2012</div>
+    <h1 class="hero-title">
+      Domina los<br>
+      <span class="line-red">Resultados de<br>Búsqueda.</span>
+    </h1>
+    <p class="hero-sub">Posicionamos tu negocio en Google, Bing, Yahoo <strong>y</strong> en los nuevos motores de IA: ChatGPT, Gemini, Perplexity y Google AI Overviews.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Quiero posicionarme</a>
+      <a href="#services" class="btn-outline">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num" data-target="105">0</div>
+        <div class="stat-label">Proyectos SEO</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="15">0</div>
+        <div class="stat-label">Países</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="35">0</div>
+        <div class="stat-label">Industrias</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="12">0</div>
+        <div class="stat-label">Años de exp.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ENGINES TICKER -->
+<div class="engines-bar">
+  <div class="ticker-track" id="ticker">
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">Google</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/bing--v1.png" alt="Bing">Bing</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/ios-filled/50/ffffff/artificial-intelligence.png" alt="ChatGPT" style="filter:invert(1)">ChatGPT</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/google-gemini.png" alt="Gemini">Gemini</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/periscope.png" alt="Perplexity">Perplexity</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/yahoo.png" alt="Yahoo">Yahoo</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/google-logo.png" alt="AI Overviews">AI Overviews</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/duckduckgo.png" alt="DuckDuckGo">DuckDuckGo</div>
+    <div class="ticker-sep">·</div>
+    <!-- duplicado para loop infinito -->
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">Google</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/bing--v1.png" alt="Bing">Bing</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/ios-filled/50/ffffff/artificial-intelligence.png" alt="ChatGPT" style="filter:invert(1)">ChatGPT</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/google-gemini.png" alt="Gemini">Gemini</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/periscope.png" alt="Perplexity">Perplexity</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/yahoo.png" alt="Yahoo">Yahoo</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/google-logo.png" alt="AI Overviews">AI Overviews</div>
+    <div class="ticker-sep">·</div>
+    <div class="ticker-item"><img src="https://img.icons8.com/color/48/duckduckgo.png" alt="DuckDuckGo">DuckDuckGo</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">Lo que hacemos</div>
+  <h2 class="section-title reveal">Servicios de Posicionamiento<br>de Alto Impacto</h2>
+  <p class="section-sub reveal">Cada estrategia está diseñada para generar visibilidad real, tráfico orgánico calificado y citas en motores de búsqueda generativos.</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">⚙️</div>
+      <h3>SEO Técnico</h3>
+      <p>Auditoría profunda, Crawl Budget, Core Web Vitals, datos estructurados (Schema.org), arquitectura de URLs, Sitemap XML y robots.txt optimizados para máxima indexación.</p>
+      <div class="service-tags">
+        <span class="tag">Screaming Frog</span><span class="tag">GSC</span><span class="tag">Schema</span><span class="tag">CWV</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">✍️</div>
+      <h3>SEO de Contenidos</h3>
+      <p>Investigación de keywords con intención de búsqueda, mapeo semántico, clústeres de contenido y optimización E-E-A-T para demostrar autoridad real ante Google.</p>
+      <div class="service-tags">
+        <span class="tag">Keyword Research</span><span class="tag">E-E-A-T</span><span class="tag">Semrush</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🤖</div>
+      <h3>GEO — Motor Generativo</h3>
+      <p>Optimizamos tu contenido para ser citado por ChatGPT, Gemini, Google AI Overviews y Perplexity. La nueva frontera del posicionamiento digital que pocos dominan.</p>
+      <div class="service-tags">
+        <span class="tag">AI Overviews</span><span class="tag">ChatGPT</span><span class="tag">Perplexity</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔗</div>
+      <h3>Link Building</h3>
+      <p>Construcción de autoridad de dominio con backlinks de calidad desde medios especializados, brand mentions y relaciones digitales que Google realmente premia.</p>
+      <div class="service-tags">
+        <span class="tag">DR / DA</span><span class="tag">Outreach</span><span class="tag">Ahrefs</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📊</div>
+      <h3>SEO Programático</h3>
+      <p>Creación de páginas en escala usando datos estructurados, templates dinámicos y automatización para dominar nichos con miles de keywords de cola larga.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Data SEO</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📈</div>
+      <h3>Analítica & Reportes</h3>
+      <p>Dashboards en tiempo real con Power BI y Google Analytics 4. Medimos visibilidad tradicional y generativa, posiciones, CTR, conversiones y ROI del SEO.</p>
+      <div class="service-tags">
+        <span class="tag">GA4</span><span class="tag">Power BI</span><span class="tag">GSC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center" class="why-grid">
+    <div>
+      <div class="section-label">Por qué elegirnos</div>
+      <h2 class="section-title reveal">Resultados medibles,<br>no promesas vacías.</h2>
+      <div class="why-points">
+        <div class="why-point reveal">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Enfoque dual SEO + GEO</h4>
+            <p>Posicionamos en resultados orgánicos clásicos Y en las respuestas de inteligencia artificial generativa. La mayoría de agencias solo hace uno.</p>
+          </div>
         </div>
-    </nav>
-
-    <!-- HERO 2026 -->
-    <section class="relative min-h-screen flex items-center justify-center hero-mesh pt-20 px-6">
-        <div class="max-w-6xl mx-auto text-center z-10">
-            <div data-aos="zoom-out" class="inline-block glass-panel px-4 py-2 rounded-full mb-8">
-                <span class="text-[10px] font-bold tracking-[0.2em] text-brandRed flex items-center gap-3">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandRed opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brandRed"></span>
-                    </span>
-                    SISTEMA DE CALIDAD TÉCNICA ACTIVO
-                </span>
-            </div>
-
-            <h1 data-aos="fade-up" class="text-5xl md:text-9xl font-black font-display tracking-tight leading-[0.9] mb-10">
-                <span class="gradient-text">Arquitectura</span><br>
-                Web de Élite.
-            </h1>
-
-            <p data-aos="fade-up" data-aos-delay="200" class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light mb-12">
-                Desplegamos ecosistemas digitales donde la **velocidad de carga** y la **visibilidad en IA** convergen en una sola estructura invulnerable.
-            </p>
-
-            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap justify-center gap-6">
-                <a href="#contacto" class="btn-3d bg-white text-black font-black px-10 py-5 rounded-xl text-xs uppercase tracking-widest">Iniciar Proyecto</a>
-                <div class="flex items-center gap-4 text-xs font-bold text-gray-500 uppercase tracking-widest px-6 border-l border-white/10">
-                    <span>Protocolo 2026</span>
-                </div>
-            </div>
+        <div class="why-point reveal">
+          <div class="why-num">02</div>
+          <div>
+            <h4>35+ industrias ejecutadas</h4>
+            <p>Desde ecommerce hasta SaaS, salud, fintech y servicios profesionales. Conocemos los matices de posicionamiento por vertical.</p>
+          </div>
         </div>
-        
-        <!-- Elemento 3D abstracto flotante -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20 floating">
-            <i class="fa-solid fa-cube text-9xl"></i>
+        <div class="why-point reveal">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Data Science aplicado al SEO</h4>
+            <p>Usamos Python, SQL y Power BI para análisis de datos que humanizan las decisiones SEO con evidencia, no intuición.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- BENTO GRID INTERACTIVO -->
-    <section id="bento" class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
-            
-            <div data-aos="fade-right" class="md:col-span-2 glass-panel rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
-                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity">
-                    <i class="fas fa-brain text-9xl"></i>
-                </div>
-                <h3 class="text-3xl font-bold font-display mb-4 italic">Optimización AEO</h3>
-                <p class="text-gray-400 text-sm">Preparamos su contenido para ser la fuente principal de respuestas en motores de Inteligencia Artificial.</p>
-            </div>
-
-            <div data-aos="fade-down" class="glass-panel rounded-[2rem] p-10 flex flex-col items-center justify-center text-center">
-                <div class="text-4xl font-black text-brandRed mb-2 font-display">32</div>
-                <div class="text-[9px] font-bold tracking-widest text-gray-500 uppercase">Procesos de Auditoría</div>
-            </div>
-
-            <div data-aos="fade-left" class="glass-panel rounded-[2rem] p-10 flex flex-col items-center justify-center text-center bg-brandBlue/10">
-                <i class="fas fa-bolt text-3xl mb-4 text-brandBlue"></i>
-                <div class="text-[9px] font-bold tracking-widest uppercase">Performance 100/100</div>
-            </div>
-
-            <div data-aos="fade-up" class="md:col-span-2 glass-panel rounded-[2rem] p-10 flex flex-col justify-end border-brandRed/20">
-                <h3 class="text-2xl font-bold font-display mb-4">Ingeniería Web Estática</h3>
-                <p class="text-gray-400 text-sm">Sitios blindados contra inyecciones SQL y ataques XSS, desplegados en la red global de Cloudflare.</p>
-            </div>
-
-            <div data-aos="fade-left" class="md:col-span-2 glass-panel rounded-[2rem] p-10 flex flex-col justify-end">
-                <h3 class="text-2xl font-bold font-display mb-4">Estrategia SEO Global</h3>
-                <p class="text-gray-400 text-sm">Escalamos su presencia con arquitecturas de enlaces y clusters de contenido automatizados.</p>
-            </div>
-
+        <div class="why-point reveal">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Transparencia total</h4>
+            <p>Acceso completo a dashboards, logs de cambios y reportes mensuales. Nada oculto, todo medible y explicado en lenguaje de negocio.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-ring"></div>
+      <div class="why-ring2"></div>
+      <div class="why-core">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAHQAAAgIDAQEBAAAAAAAAAAAAAAYFBwMECAECCf/EABsBAAIDAQEBAAAAAAAAAAAABAAEAgMFAQYH/9oADAMBAAIQAxAAAAHqkAANYNkpeEeh0GUXKhb4mOakgCHQAAj/AJkR3Jv2salVk2LTdjIyeWSM36pJ+lJLj0L+KYtdWUgR5V38x9nGzwa29BlyYv0hJm82FjGZMeWJz/ZfeP68uzIFYsJE1fC65qjmBKNKFIraFlfS55kfRZzbXZatzL8wkKzjOeVY3l9aVUZBH0fHB6PeUuD3vEZjw2w2Vtx10eZtnJnu80pHRCsxn0lnsNHYp0pTrx2tW4OO8SFQAtLyjL0L488MtnVs5xMSrXcZc5e6ie/aOgCMwAAAAAAAAAAAAAAAP//EACkQAAEEAgAFBAEFAAAAAAAAAAQBAgMFAAYHERITFBAVFyBAFiEiIzH/2gAIAQEAAQUC/AIIiEhO4lj9f6h2g9YZ9pdibBsVdlLttdeu+19ei69X2F0XtptakSuEYx7BV/pQjk+9qQbmOl2kmnL9fcBcdZCMbstrNs9iNKocwB7YlCcki17eaFRs6ZpHPfYjRWI2kbC5ie4C57gLily4PNNNKssyJJJPnlzsUayIyKxK6ZLQrFsiVxbEnLOeaRnlzZ5Mi4IJ5WVtRIwhRkRFqnqySqc4Zap4si174s7KPSQLttUHlk1b1vJAkFZgR7wUpriRuNsUbkdt25ktXIkNkndkuHxLHZ/tKT30kJR6yFqxCreI6P0Ak6J+rP8AcazIWdKFt6sa9WLHPjZcNm6BfT4q2HPizYm5Wa758KaYjcF4euld" alt="Páginas Web Total" style="width:56px;height:56px;border-radius:50%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CONTACTO SEGURO -->
-    <section id="contacto" class="py-32 px-6 text-center">
-        <div data-aos="zoom-in" class="max-w-4xl mx-auto glass-panel p-16 rounded-[3rem] border-brandRed/30 relative">
-            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-brandRed rounded-full flex items-center justify-center shadow-xl shadow-brandRed/40">
-                <i class="fas fa-headset text-2xl"></i>
-            </div>
-            <h2 class="text-4xl font-black font-display mb-6">¿Hablamos de su próximo hito?</h2>
-            <p class="text-gray-400 mb-12 text-lg">
-                Para mantener la máxima agilidad y seguridad, operamos mediante consultoría directa. 
-                Sin formularios, sin demoras.
-            </p>
-            
-            <div class="inline-block px-8 py-4 rounded-2xl bg-white/5 border border-white/10">
-                <span class="text-xs font-bold tracking-widest text-brandBlue flex items-center gap-4">
-                    SOPORTE EN VIVO ACTIVO 
-                    <span class="flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-brandBlue opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-brandBlue"></span>
-                    </span>
-                </span>
-            </div>
-            <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-[0.4em]">Inicie el chat en la esquina inferior</p>
-        </div>
-    </section>
+<!-- GEO ENGINES -->
+<section id="geo">
+  <div class="section-label">Motores Generativos</div>
+  <h2 class="section-title reveal">El SEO evolucionó.<br>¿Está tu marca en la IA?</h2>
+  <p class="section-sub reveal">En 2026, el 40% de las búsquedas se resuelven directamente con IA sin clic. Estar citado en estas respuestas es la nueva posición #1.</p>
+  <div class="geo-grid">
+    <div class="engine-card reveal">
+      <div class="engine-logo"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google AI Overviews"></div>
+      <h4>Google AI Overviews</h4>
+      <p>Aparece en las respuestas generativas que Google muestra en el 50% de las búsquedas actuales.</p>
+    </div>
+    <div class="engine-card reveal">
+      <div class="engine-logo"><img src="https://img.icons8.com/ios-filled/50/ffffff/artificial-intelligence.png" alt="ChatGPT" style="filter:invert(0.7)brightness(2)"></div>
+      <h4>ChatGPT</h4>
+      <p>200M+ usuarios semanales. Cuando preguntan por tu categoría, tu marca debe ser la respuesta citada.</p>
+    </div>
+    <div class="engine-card reveal">
+      <div class="engine-logo"><img src="https://img.icons8.com/color/48/google-gemini.png" alt="Gemini"></div>
+      <h4>Google Gemini</h4>
+      <p>Integrado en el ecosistema Google. Optimizamos para que Gemini cite tu sitio como fuente de autoridad.</p>
+    </div>
+    <div class="engine-card reveal">
+      <div class="engine-logo"><img src="https://img.icons8.com/color/48/periscope.png" alt="Perplexity"></div>
+      <h4>Perplexity AI</h4>
+      <p>100M+ consultas mensuales. Cita siempre sus fuentes — posicionamos tu contenido para aparecer ahí.</p>
+    </div>
+  </div>
+</section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-[9px] text-gray-700 tracking-[0.5em] font-display uppercase">
-        PÁGINAS WEB TOTAL — NEXT-GEN WEB AGENCY — 2026
-    </footer>
+<!-- RESULTS BAR -->
+<div class="results-section">
+  <div class="results-row">
+    <div class="result-item"><div class="result-num">105+</div><div class="result-label">Proyectos ejecutados</div></div>
+    <div class="result-item"><div class="result-num">15</div><div class="result-label">Países LATAM, USA, EU</div></div>
+    <div class="result-item"><div class="result-num">35+</div><div class="result-label">Industrias atendidas</div></div>
+    <div class="result-item"><div class="result-num">12+</div><div class="result-label">Años de experiencia</div></div>
+  </div>
+</div>
 
-    <script>
-        AOS.init({ duration: 1000, once: true });
-        
-        // Efecto Navbar al hacer Scroll
-        window.onscroll = function() {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2');
-                nav.firstElementChild.classList.add('bg-black/90');
-            } else {
-                nav.classList.remove('py-2');
-                nav.firstElementChild.classList.remove('bg-black/90');
-            }
-        };
-    </script>
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label">Metodología</div>
+  <h2 class="section-title reveal">Cómo trabajamos</h2>
+  <p class="section-sub reveal">Un proceso probado en más de 105 proyectos que combina rigor técnico, estrategia de contenido y optimización para motores generativos.</p>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Diagnóstico & Benchmarking</h3>
+        <p>Auditoría técnica con Screaming Frog, análisis de visibilidad en GSC, benchmarking de competencia en SEO tradicional y GEO. Definimos la línea base y las oportunidades prioritarias.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Estrategia de Keywords & Contenido</h3>
+        <p>Investigación semántica con Semrush/Ahrefs, clasificación por intención de búsqueda (informacional, transaccional, comercial), mapeo de keywords a URLs y análisis de visibilidad generativa para cada término.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Implementación Técnica & Contenido</h3>
+        <p>Optimización de metadatos, datos estructurados Schema.org, arquitectura interna, corrección de errores técnicos, creación de contenido optimizado para E-E-A-T y para ser citado por motores de IA.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>Link Building & Autoridad</h3>
+        <p>Construcción de backlinks desde dominios de alta autoridad en tu sector. Estrategia de brand mentions para señales de confianza que influyen tanto en Google como en los LLMs que citan tu marca.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <h3>Medición, Reporte & Escala</h3>
+        <p>Dashboards en Power BI + GA4 + GSC. Reportes mensuales de posiciones, tráfico, citas en IA y ROI. Iteración continua basada en datos para escalar los resultados.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/559af6248658396a41e44f75/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Tecnologías & Herramientas</div>
+  <h2 class="section-title reveal">Stack Tecnológico</h2>
+  <p class="section-sub reveal">Usamos las herramientas líderes de la industria combinadas con capacidades de datos y programación para SEO de alto rendimiento.</p>
+  <div class="skills-grid">
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Search Console"><span>Google GSC</span></div>
+    <div class="skill-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+    <div class="skill-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/artificial-intelligence.png" alt="AI"><span>AI Prompting</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/microsoft-power-bi-2021.png" alt="Power BI"><span>Power BI</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/google-analytics.png" alt="GA4"><span>Google GA4</span></div>
+    <div class="skill-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git / GitHub</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma"><span>UI / UX</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop"><span>Diseño Gráfico</span></div>
+    <div class="skill-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span>CSS / HTML</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/color/48/google-gemini.png" alt="Gemini"><span>Gemini AI</span></div>
+    <div class="skill-item reveal"><img src="https://img.icons8.com/ios-filled/50/ffffff/artificial-intelligence.png" alt="ChatGPT" style="filter:invert(0.5)"><span>ChatGPT</span></div>
+  </div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Hablemos</div>
+  <h2 class="section-title">¿Listo para dominar<br>los buscadores?</h2>
+  <p class="contact-sub">Cuéntanos tu negocio y te decimos exactamente qué oportunidades de posicionamiento estás perdiendo hoy.</p>
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <input type="text" placeholder="Nombre o empresa" required autocomplete="name">
+    <input type="email" placeholder="Email de contacto" required autocomplete="email">
+    <input type="url" placeholder="URL de tu sitio web (ej: tusitio.com)">
+    <select>
+      <option value="" disabled selected>¿Qué servicio te interesa?</option>
+      <option>SEO Técnico</option>
+      <option>GEO — Motores Generativos</option>
+      <option>SEO de Contenidos</option>
+      <option>Link Building</option>
+      <option>SEO Programático</option>
+      <option>Consultoría completa</option>
+    </select>
+    <textarea rows="4" placeholder="Cuéntanos brevemente tu situación actual y qué quieres lograr..."></textarea>
+    <button type="submit">🚀 Solicitar diagnóstico gratuito</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAHQAAAgIDAQEBAAAAAAAAAAAAAAYFBwMECAECCf/EABsBAAIDAQEBAAAAAAAAAAAABAAEAgMFAQYH/9oADAMBAAIQAxAAAAHqkAANYNkpeEeh0GUXKhb4mOakgCHQAAj/AJkR3Jv2salVk2LTdjIyeWSM36pJ+lJLj0L+KYtdWUgR5V38x9nGzwa29BlyYv0hJm82FjGZMeWJz/ZfeP68uzIFYsJE1fC65qjmBKNKFIraFlfS55kfRZzbXZatzL8wkKzjOeVY3l9aVUZBH0fHB6PeUuD3vEZjw2w2Vtx10eZtnJnu80pHRCsxn0lnsNHYp0pTrx2tW4OO8SFQAtLyjL0L488MtnVs5xMSrXcZc5e6ie/aOgCMwAAAAAAAAAAAAAAAP//EACkQAAEEAgAFBAEFAAAAAAAAAAQBAgMFAAYHERITFBAVFyBAFiEiIzH/2gAIAQEAAQUC/AIIiEhO4lj9f6h2g9YZ9pdibBsVdlLttdeu+19ei69X2F0XtptakSuEYx7BV/pQjk+9qQbmOl2kmnL9fcBcdZCMbstrNs9iNKocwB7YlCcki17eaFRs6ZpHPfYjRWI2kbC5ie4C57gLily4PNNNKssyJJJPnlzsUayIyKxK6ZLQrFsiVxbEnLOeaRnlzZ5Mi4IJ5WVtRIwhRkRFqnqySqc4Zap4si174s7KPSQLttUHlk1b1vJAkFZgR7wUpriRuNsUbkdt25ktXIkNkndkuHxLHZ/tKT30kJR6yFqxCreI6P0Ak6J+rP8AcazIWdKFt6sa9WLHPjZcNm6BfT4q2HPizYm5Wa758KaYjcF4euld" alt="Logo" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid #e11d48">
+    <div class="footer-brand">Páginas Web <span>Total</span></div>
+  </div>
+  <div class="footer-copy">© 2026 Páginas Web Total. Todos los derechos reservados. | SEO & GEO Agency</div>
+  <div style="display:flex;gap:16px">
+    <a href="#services" style="color:var(--silver);font-size:0.78rem;text-decoration:none">Servicios</a>
+    <a href="#geo" style="color:var(--silver);font-size:0.78rem;text-decoration:none">GEO</a>
+    <a href="#contact" style="color:var(--silver);font-size:0.78rem;text-decoration:none">Contacto</a>
+  </div>
+</footer>
+
+<!-- TAWK.TO -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/559af6248658396a41e44f75/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script>
+// ── CURSOR ──
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+});
+function animRing(){
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('a,button,.service-card,.engine-card,.skill-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cursor.style.width='20px';cursor.style.height='20px';ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(225,29,72,0.8)'; });
+  el.addEventListener('mouseleave',()=>{ cursor.style.width='12px';cursor.style.height='12px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(225,29,72,0.5)'; });
+});
+
+// ── THREE.JS 3D SPHERE ──
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth/canvas.clientHeight, 0.1, 100);
+  camera.position.set(0,0,3.5);
+
+  // Wireframe sphere
+  const geo = new THREE.SphereGeometry(1.2, 32, 32);
+  const wireMat = new THREE.MeshBasicMaterial({color:0xe11d48, wireframe:true, transparent:true, opacity:0.18});
+  const sphere = new THREE.Mesh(geo, wireMat);
+  scene.add(sphere);
+
+  // Inner glow sphere
+  const innerGeo = new THREE.SphereGeometry(1.0, 32, 32);
+  const innerMat = new THREE.MeshBasicMaterial({color:0xe11d48, transparent:true, opacity:0.04});
+  const inner = new THREE.Mesh(innerGeo, innerMat);
+  scene.add(inner);
+
+  // Orbiting particles
+  const particles = new THREE.BufferGeometry();
+  const count = 300;
+  const pos = new Float32Array(count*3);
+  for(let i=0;i<count;i++){
+    const theta = Math.random()*Math.PI*2;
+    const phi = Math.acos(2*Math.random()-1);
+    const r = 1.4+Math.random()*0.8;
+    pos[i*3]=r*Math.sin(phi)*Math.cos(theta);
+    pos[i*3+1]=r*Math.sin(phi)*Math.sin(theta);
+    pos[i*3+2]=r*Math.cos(phi);
+  }
+  particles.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  const pMat = new THREE.PointsMaterial({color:0xe11d48, size:0.025, transparent:true, opacity:0.7});
+  const pMesh = new THREE.Points(particles, pMat);
+  scene.add(pMesh);
+
+  let targetX=0, targetY=0;
+  document.addEventListener('mousemove',e=>{
+    targetX=(e.clientX/window.innerWidth-0.5)*1.5;
+    targetY=-(e.clientY/window.innerHeight-0.5)*1.5;
+  });
+
+  function resize(){
+    const w=canvas.parentElement.clientWidth*0.52||600;
+    const h=canvas.parentElement.clientHeight||700;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize',resize);
+
+  let t=0;
+  function animate(){
+    requestAnimationFrame(animate); t+=0.008;
+    sphere.rotation.y=t*0.4;
+    sphere.rotation.x=t*0.15;
+    pMesh.rotation.y=-t*0.2;
+    pMesh.rotation.x=t*0.1;
+    sphere.rotation.y+=(targetX-sphere.rotation.y)*0.05;
+    sphere.rotation.x+=(targetY-sphere.rotation.x)*0.05;
+    renderer.render(scene,camera);
+  }
+  animate();
+})();
+
+// ── COUNTER ANIMATION ──
+function animateCounters(){
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    const target=+el.dataset.target;
+    let current=0;
+    const step=target/60;
+    const timer=setInterval(()=>{
+      current=Math.min(current+step,target);
+      el.textContent=Math.floor(current)+(target>=100?'+':'+');
+      if(current>=target) clearInterval(timer);
+    },20);
+  });
+}
+let countersRun=false;
+const heroObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting && !countersRun){
+    countersRun=true; setTimeout(animateCounters,600);
+  }
+},{threshold:0.3});
+heroObs.observe(document.getElementById('hero'));
+
+// ── SCROLL REVEAL ──
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+// ── NAV MOBILE ──
+function toggleMenu(){
+  document.getElementById('mainNav').classList.toggle('nav-open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('mainNav').classList.remove('nav-open');
+}));
+
+// ── FORM SUBMIT ──
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.textContent='✅ ¡Mensaje enviado! Te contactamos pronto.';
+  btn.style.background='#166534';
+  setTimeout(()=>{ btn.textContent='🚀 Solicitar diagnóstico gratuito'; btn.style.background=''; e.target.reset(); },4000);
+}
+
+// ── NAV SCROLL STYLE ──
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('mainNav');
+  nav.style.borderBottomColor=window.scrollY>50?'rgba(225,29,72,0.2)':'rgba(255,255,255,0.05)';
+});
+</script>
 </body>
 </html>
