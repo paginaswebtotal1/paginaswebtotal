@@ -2,6 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- ========== GOOGLE TAG MANAGER (HEAD) ========== -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K9W8D3QC');</script>
+<!-- ========== FIN GTM HEAD ========== -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>Páginas Web Total | Agencia de Marketing Digital & SEO Avanzado</title>
 <meta name="description" content="Agencia especializada en posicionamiento web, SEO técnico, GEO y visibilidad en motores de búsqueda generativa: Google AI Overviews, ChatGPT, Perplexity, Gemini.">
@@ -379,6 +386,10 @@ s0.parentNode.insertBefore(s1,s0);
 </style>
 </head>
 <body>
+<!-- ========== GOOGLE TAG MANAGER (BODY NOSCRIPT) ========== -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9W8D3QC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- ========== FIN GTM BODY ========== -->
 
 <a href="#" class="float-badge" onclick="openTawk()">💬 Chatea con nosotros</a>
 
@@ -622,9 +633,7 @@ function openTawk(){
     Tawk_API.maximize();
     Tawk_API.showWidget();
   } else {
-    // Fallback: mostrar alerta mientras carga
     alert('El chat está cargando. Por favor espera unos segundos y vuelve a intentarlo.');
-    // Recargar script si es necesario
     if(!document.querySelector('script[src*="embed.tawk.to"]')){
       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
       s1.async=true;
@@ -636,7 +645,6 @@ function openTawk(){
   }
 }
 
-// Asegurar que Tawk esté disponible, también manejar el float badge
 window.addEventListener('load', function(){
   if(typeof Tawk_API !== 'undefined'){
     Tawk_API.onLoad = function(){
