@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <!-- ========== GOOGLE TAG MANAGER (HEAD) ========== -->
@@ -10,12 +10,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-K9W8D3QC');</script>
 <!-- ========== FIN GTM HEAD ========== -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>Páginas Web Total | Agencia de Marketing Digital & SEO Avanzado</title>
-<meta name="description" content="Agencia especializada en posicionamiento web, SEO técnico, GEO y visibilidad en motores de búsqueda generativa: Google AI Overviews, ChatGPT, Perplexity, Gemini.">
+<title id="pageTitle">Páginas Web Total | Agencia de Marketing Digital & SEO Avanzado</title>
+<meta name="description" id="pageDesc" content="Agencia especializada en posicionamiento web, SEO técnico, GEO y visibilidad en motores de búsqueda generativa: Google AI Overviews, ChatGPT, Perplexity, Gemini.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Páginas Web Total | SEO & GEO Agency">
-<meta property="og:description" content="Posicionamos tu negocio en Google, Bing, ChatGPT, Gemini, Perplexity y AI Overviews.">
+<meta property="og:title" id="ogTitle" content="Páginas Web Total | SEO & GEO Agency">
+<meta property="og:description" id="ogDesc" content="Posicionamos tu negocio en Google, Bing, ChatGPT, Gemini, Perplexity y AI Overviews.">
 <meta property="og:type" content="website">
+<meta property="og:locale" id="ogLocale" content="es_ES">
+<!-- ===== HREFLANG / IDIOMAS ALTERNATIVOS ===== -->
+<link rel="alternate" hreflang="es" href="https://paginaswebtotal.com/">
+<link rel="alternate" hreflang="en" href="https://paginaswebtotal.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://paginaswebtotal.com/">
+<link rel="canonical" id="canonicalTag" href="https://paginaswebtotal.com/">
+<!-- ===== FIN HREFLANG ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -383,6 +390,29 @@ s0.parentNode.insertBefore(s1,s0);
   }
   @media (min-width: 768px) { .float-badge { bottom: 100px; right: 24px; padding: 10px 18px; font-size: 0.75rem; } }
   @keyframes floatBadge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+  /* ===== SELECTOR DE IDIOMA ===== */
+  .lang-switch {
+    display: flex; align-items: center; gap: 4px;
+    border: 1px solid var(--neon-cyan); border-radius: 100px;
+    padding: 3px; margin-left: 18px;
+  }
+  .lang-btn {
+    background: transparent; border: none; cursor: pointer;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--silver); padding: 5px 12px; border-radius: 100px;
+    transition: all 0.2s; text-transform: uppercase;
+  }
+  .lang-btn:hover { color: var(--white); }
+  .lang-btn.active {
+    background: var(--neon-cyan); color: var(--black);
+    box-shadow: 0 0 14px rgba(0,240,255,0.6);
+  }
+  @media (max-width: 900px) {
+    .lang-switch { margin-left: 10px; }
+    .lang-btn { padding: 5px 10px; font-size: 0.7rem; }
+  }
 </style>
 </head>
 <body>
@@ -391,42 +421,46 @@ s0.parentNode.insertBefore(s1,s0);
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ========== FIN GTM BODY ========== -->
 
-<a href="#" class="float-badge" onclick="openTawk()">💬 Chatea con nosotros</a>
+<a href="#" class="float-badge" onclick="openTawk()" data-i18n="float_badge">💬 Chatea con nosotros</a>
 
 <nav id="mainNav">
   <a href="#" class="nav-logo">
     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f0ff'/%3E%3Ctext x='50' y='67' text-anchor='middle' fill='%230a0a0f' font-size='40' font-weight='bold' font-family='Arial'%3EPT%3C/text%3E%3C/svg%3E" alt="Logo">
-    <span>Páginas Web Total <em>SEO & GEO Agency</em></span>
+    <span>Páginas Web Total <em>SEO &amp; GEO Agency</em></span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#services">Servicios</a></li>
-    <li><a href="#geo">GEO</a></li>
-    <li><a href="#process">Proceso</a></li>
-    <li><a href="#skills">Expertise</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
+    <li><a href="#geo" data-i18n="nav_geo">GEO</a></li>
+    <li><a href="#process" data-i18n="nav_process">Proceso</a></li>
+    <li><a href="#skills" data-i18n="nav_skills">Expertise</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Cotiza Gratis</a>
+  <a href="#contact" class="nav-cta" data-i18n="nav_cta">Cotiza Gratis</a>
+  <div class="lang-switch" role="group" aria-label="Language selector">
+    <button class="lang-btn" id="langEs" onclick="setLang('es', true)">ES</button>
+    <button class="lang-btn" id="langEn" onclick="setLang('en', true)">EN</button>
+  </div>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
 <section id="hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-content">
-    <div class="hero-badge">🚀 Agencia Activa — Posicionamos desde 2012</div>
-    <h1 class="hero-title">
+    <div class="hero-badge" data-i18n="hero_badge">🚀 Agencia Activa — Posicionamos desde 2012</div>
+    <h1 class="hero-title" data-i18n-html="hero_title">
       Domina los<br>
       <span class="line-neon">Resultados de Búsqueda.</span>
     </h1>
-    <p class="hero-sub">Posicionamos tu negocio en Google, Bing, Yahoo y en los nuevos motores de IA: ChatGPT, Gemini, Perplexity y Google AI Overviews.</p>
+    <p class="hero-sub" data-i18n="hero_sub">Posicionamos tu negocio en Google, Bing, Yahoo y en los nuevos motores de IA: ChatGPT, Gemini, Perplexity y Google AI Overviews.</p>
     <div class="hero-buttons">
-      <a href="#contact" class="btn-primary">Quiero posicionarme</a>
-      <a href="#services" class="btn-outline">Ver servicios</a>
+      <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Quiero posicionarme</a>
+      <a href="#services" class="btn-outline" data-i18n="hero_btn2">Ver servicios</a>
     </div>
     <div class="hero-stats">
-      <div class="stat-item"><div class="stat-num" data-target="105">0</div><div class="stat-label">Proyectos SEO</div></div>
-      <div class="stat-item"><div class="stat-num" data-target="15">0</div><div class="stat-label">Países</div></div>
-      <div class="stat-item"><div class="stat-num" data-target="35">0</div><div class="stat-label">Industrias</div></div>
-      <div class="stat-item"><div class="stat-num" data-target="12">0</div><div class="stat-label">Años exp.</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="105">0</div><div class="stat-label" data-i18n="stat_projects">Proyectos SEO</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="15">0</div><div class="stat-label" data-i18n="stat_countries">Países</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="35">0</div><div class="stat-label" data-i18n="stat_industries">Industrias</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="12">0</div><div class="stat-label" data-i18n="stat_years">Años exp.</div></div>
     </div>
   </div>
 </section>
@@ -450,64 +484,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section id="services">
-  <div class="section-label">Lo que hacemos</div>
-  <h2 class="section-title reveal">Servicios de Posicionamiento<br>de Alto Impacto</h2>
-  <p class="section-sub reveal">Cada estrategia está diseñada para generar visibilidad real, tráfico orgánico calificado y citas en motores generativos.</p>
+  <div class="section-label" data-i18n="services_label">Lo que hacemos</div>
+  <h2 class="section-title reveal" data-i18n-html="services_title">Servicios de Posicionamiento<br>de Alto Impacto</h2>
+  <p class="section-sub reveal" data-i18n="services_sub">Cada estrategia está diseñada para generar visibilidad real, tráfico orgánico calificado y citas en motores generativos.</p>
   <div class="services-grid">
-    <div class="service-card reveal"><div class="service-icon">⚙️</div><h3>SEO Técnico</h3><p>Auditoría profunda, Crawl Budget, Core Web Vitals, datos estructurados Schema.org, arquitectura optimizada.</p><div class="service-tags"><span class="tag">Screaming Frog</span><span class="tag">GSC</span><span class="tag">Schema</span></div></div>
-    <div class="service-card reveal"><div class="service-icon">✍️</div><h3>SEO de Contenidos</h3><p>Keyword research, mapeo semántico, clústeres de contenido y optimización E-E-A-T para autoridad real.</p><div class="service-tags"><span class="tag">Keyword Research</span><span class="tag">E-E-A-T</span><span class="tag">Semrush</span></div></div>
-    <div class="service-card reveal"><div class="service-icon">🤖</div><h3>GEO — Motor Generativo</h3><p>Optimizamos tu contenido para ser citado por ChatGPT, Gemini, AI Overviews y Perplexity. La nueva frontera del SEO.</p><div class="service-tags"><span class="tag">AI Overviews</span><span class="tag">ChatGPT</span><span class="tag">Perplexity</span></div></div>
-    <div class="service-card reveal"><div class="service-icon">🔗</div><h3>Link Building</h3><p>Construcción de autoridad con backlinks de calidad desde medios especializados y brand mentions.</p><div class="service-tags"><span class="tag">DR/DA</span><span class="tag">Outreach</span><span class="tag">Ahrefs</span></div></div>
-    <div class="service-card reveal"><div class="service-icon">📊</div><h3>SEO Programático</h3><p>Creación de páginas en escala usando datos estructurados y automatización para dominar nichos.</p><div class="service-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Data SEO</span></div></div>
-    <div class="service-card reveal"><div class="service-icon">📈</div><h3>Analítica & Reportes</h3><p>Dashboards en tiempo real con GA4 y Power BI. Medimos visibilidad tradicional y generativa.</p><div class="service-tags"><span class="tag">GA4</span><span class="tag">Power BI</span><span class="tag">GSC</span></div></div>
+    <div class="service-card reveal"><div class="service-icon">⚙️</div><h3 data-i18n="svc1_t">SEO Técnico</h3><p data-i18n="svc1_d">Auditoría profunda, Crawl Budget, Core Web Vitals, datos estructurados Schema.org, arquitectura optimizada.</p><div class="service-tags"><span class="tag">Screaming Frog</span><span class="tag">GSC</span><span class="tag">Schema</span></div></div>
+    <div class="service-card reveal"><div class="service-icon">✍️</div><h3 data-i18n="svc2_t">SEO de Contenidos</h3><p data-i18n="svc2_d">Keyword research, mapeo semántico, clústeres de contenido y optimización E-E-A-T para autoridad real.</p><div class="service-tags"><span class="tag">Keyword Research</span><span class="tag">E-E-A-T</span><span class="tag">Semrush</span></div></div>
+    <div class="service-card reveal"><div class="service-icon">🤖</div><h3 data-i18n="svc3_t">GEO — Motor Generativo</h3><p data-i18n="svc3_d">Optimizamos tu contenido para ser citado por ChatGPT, Gemini, AI Overviews y Perplexity. La nueva frontera del SEO.</p><div class="service-tags"><span class="tag">AI Overviews</span><span class="tag">ChatGPT</span><span class="tag">Perplexity</span></div></div>
+    <div class="service-card reveal"><div class="service-icon">🔗</div><h3 data-i18n="svc4_t">Link Building</h3><p data-i18n="svc4_d">Construcción de autoridad con backlinks de calidad desde medios especializados y brand mentions.</p><div class="service-tags"><span class="tag">DR/DA</span><span class="tag">Outreach</span><span class="tag">Ahrefs</span></div></div>
+    <div class="service-card reveal"><div class="service-icon">📊</div><h3 data-i18n="svc5_t">SEO Programático</h3><p data-i18n="svc5_d">Creación de páginas en escala usando datos estructurados y automatización para dominar nichos.</p><div class="service-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Data SEO</span></div></div>
+    <div class="service-card reveal"><div class="service-icon">📈</div><h3 data-i18n="svc6_t">Analítica & Reportes</h3><p data-i18n="svc6_d">Dashboards en tiempo real con GA4 y Power BI. Medimos visibilidad tradicional y generativa.</p><div class="service-tags"><span class="tag">GA4</span><span class="tag">Power BI</span><span class="tag">GSC</span></div></div>
   </div>
 </section>
 
 <section id="why">
   <div class="why-grid">
-    <div><div class="section-label">Por qué elegirnos</div><h2 class="section-title reveal">Resultados medibles,<br>no promesas vacías.</h2><div class="why-points"><div class="why-point reveal"><div class="why-num">01</div><div><h4>Enfoque dual SEO + GEO</h4><p>Posicionamos en resultados orgánicos clásicos Y en respuestas de IA generativa.</p></div></div><div class="why-point reveal"><div class="why-num">02</div><div><h4>35+ industrias ejecutadas</h4><p>Ecommerce, SaaS, salud, fintech y más. Conocemos los matices por vertical.</p></div></div><div class="why-point reveal"><div class="why-num">03</div><div><h4>Data Science aplicado al SEO</h4><p>Usamos Python, SQL y Power BI para decisiones basadas en evidencia.</p></div></div><div class="why-point reveal"><div class="why-num">04</div><div><h4>Transparencia total</h4><p>Acceso a dashboards, logs y reportes mensuales. Todo medible y explicado.</p></div></div></div></div>
+    <div><div class="section-label" data-i18n="why_label">Por qué elegirnos</div><h2 class="section-title reveal" data-i18n-html="why_title">Resultados medibles,<br>no promesas vacías.</h2><div class="why-points"><div class="why-point reveal"><div class="why-num">01</div><div><h4 data-i18n="why1_t">Enfoque dual SEO + GEO</h4><p data-i18n="why1_d">Posicionamos en resultados orgánicos clásicos Y en respuestas de IA generativa.</p></div></div><div class="why-point reveal"><div class="why-num">02</div><div><h4 data-i18n="why2_t">35+ industrias ejecutadas</h4><p data-i18n="why2_d">Ecommerce, SaaS, salud, fintech y más. Conocemos los matices por vertical.</p></div></div><div class="why-point reveal"><div class="why-num">03</div><div><h4 data-i18n="why3_t">Data Science aplicado al SEO</h4><p data-i18n="why3_d">Usamos Python, SQL y Power BI para decisiones basadas en evidencia.</p></div></div><div class="why-point reveal"><div class="why-num">04</div><div><h4 data-i18n="why4_t">Transparencia total</h4><p data-i18n="why4_d">Acceso a dashboards, logs y reportes mensuales. Todo medible y explicado.</p></div></div></div></div>
     <div class="why-visual"><div class="why-ring"></div><div class="why-ring2"></div><div class="why-core"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f0ff'/%3E%3Ctext x='50' y='67' text-anchor='middle' fill='%230a0a0f' font-size='40' font-weight='bold'%3EPT%3C/text%3E%3C/svg%3E" alt="Páginas Web Total"></div></div>
   </div>
 </section>
 
 <section id="geo">
-  <div class="section-label">Motores Generativos</div>
-  <h2 class="section-title reveal">El SEO evolucionó.<br>¿Está tu marca en la IA?</h2>
-  <p class="section-sub reveal">En 2026, el 40% de las búsquedas se resuelven con IA sin clic. Ser citado es la nueva posición #1.</p>
+  <div class="section-label" data-i18n="geo_label">Motores Generativos</div>
+  <h2 class="section-title reveal" data-i18n-html="geo_title">El SEO evolucionó.<br>¿Está tu marca en la IA?</h2>
+  <p class="section-sub reveal" data-i18n="geo_sub">En 2026, el 40% de las búsquedas se resuelven con IA sin clic. Ser citado es la nueva posición #1.</p>
   <div class="geo-grid">
-    <div class="engine-card reveal"><div class="engine-logo">🔍</div><h4>Google AI Overviews</h4><p>Aparece en las respuestas generativas de Google.</p></div>
-    <div class="engine-card reveal"><div class="engine-logo">🤖</div><h4>ChatGPT</h4><p>200M+ usuarios semanales. Tu marca debe ser la respuesta citada.</p></div>
-    <div class="engine-card reveal"><div class="engine-logo">✨</div><h4>Google Gemini</h4><p>Optimizamos para que Gemini cite tu sitio como fuente de autoridad.</p></div>
-    <div class="engine-card reveal"><div class="engine-logo">🌀</div><h4>Perplexity AI</h4><p>100M+ consultas mensuales. Posicionamos tu contenido para aparecer ahí.</p></div>
+    <div class="engine-card reveal"><div class="engine-logo">🔍</div><h4>Google AI Overviews</h4><p data-i18n="eng1_d">Aparece en las respuestas generativas de Google.</p></div>
+    <div class="engine-card reveal"><div class="engine-logo">🤖</div><h4>ChatGPT</h4><p data-i18n="eng2_d">200M+ usuarios semanales. Tu marca debe ser la respuesta citada.</p></div>
+    <div class="engine-card reveal"><div class="engine-logo">✨</div><h4>Google Gemini</h4><p data-i18n="eng3_d">Optimizamos para que Gemini cite tu sitio como fuente de autoridad.</p></div>
+    <div class="engine-card reveal"><div class="engine-logo">🌀</div><h4>Perplexity AI</h4><p data-i18n="eng4_d">100M+ consultas mensuales. Posicionamos tu contenido para aparecer ahí.</p></div>
   </div>
 </section>
 
 <div class="results-section">
   <div class="results-row">
-    <div class="result-item"><div class="result-num">105+</div><div class="result-label">Proyectos ejecutados</div></div>
-    <div class="result-item"><div class="result-num">15</div><div class="result-label">Países</div></div>
-    <div class="result-item"><div class="result-num">35+</div><div class="result-label">Industrias</div></div>
-    <div class="result-item"><div class="result-num">12+</div><div class="result-label">Años experiencia</div></div>
+    <div class="result-item"><div class="result-num">105+</div><div class="result-label" data-i18n="res_projects">Proyectos ejecutados</div></div>
+    <div class="result-item"><div class="result-num">15</div><div class="result-label" data-i18n="res_countries">Países</div></div>
+    <div class="result-item"><div class="result-num">35+</div><div class="result-label" data-i18n="res_industries">Industrias</div></div>
+    <div class="result-item"><div class="result-num">12+</div><div class="result-label" data-i18n="res_years">Años experiencia</div></div>
   </div>
 </div>
 
 <section id="process">
-  <div class="section-label">Metodología</div>
-  <h2 class="section-title reveal">Cómo trabajamos</h2>
-  <p class="section-sub reveal">Un proceso probado que combina rigor técnico, estrategia de contenido y optimización para IA.</p>
+  <div class="section-label" data-i18n="process_label">Metodología</div>
+  <h2 class="section-title reveal" data-i18n="process_title">Cómo trabajamos</h2>
+  <p class="section-sub reveal" data-i18n="process_sub">Un proceso probado que combina rigor técnico, estrategia de contenido y optimización para IA.</p>
   <div class="process-steps">
-    <div class="process-step reveal"><div class="step-num">01</div><div class="step-content"><h3>Diagnóstico & Benchmarking</h3><p>Auditoría técnica, análisis de visibilidad y benchmarking de competencia en SEO tradicional y GEO.</p></div></div>
-    <div class="process-step reveal"><div class="step-num">02</div><div class="step-content"><h3>Estrategia de Keywords & Contenido</h3><p>Investigación semántica, clasificación por intención y análisis de visibilidad generativa.</p></div></div>
-    <div class="process-step reveal"><div class="step-num">03</div><div class="step-content"><h3>Implementación Técnica & Contenido</h3><p>Optimización de metadatos, Schema.org, arquitectura interna y contenido para E-E-A-T e IA.</p></div></div>
-    <div class="process-step reveal"><div class="step-num">04</div><div class="step-content"><h3>Link Building & Autoridad</h3><p>Construcción de backlinks de alta autoridad y brand mentions para confianza.</p></div></div>
-    <div class="process-step reveal"><div class="step-num">05</div><div class="step-content"><h3>Medición, Reporte & Escala</h3><p>Dashboards en Power BI + GA4. Reportes de posiciones, tráfico, citas en IA y ROI.</p></div></div>
+    <div class="process-step reveal"><div class="step-num">01</div><div class="step-content"><h3 data-i18n="step1_t">Diagnóstico & Benchmarking</h3><p data-i18n="step1_d">Auditoría técnica, análisis de visibilidad y benchmarking de competencia en SEO tradicional y GEO.</p></div></div>
+    <div class="process-step reveal"><div class="step-num">02</div><div class="step-content"><h3 data-i18n="step2_t">Estrategia de Keywords & Contenido</h3><p data-i18n="step2_d">Investigación semántica, clasificación por intención y análisis de visibilidad generativa.</p></div></div>
+    <div class="process-step reveal"><div class="step-num">03</div><div class="step-content"><h3 data-i18n="step3_t">Implementación Técnica & Contenido</h3><p data-i18n="step3_d">Optimización de metadatos, Schema.org, arquitectura interna y contenido para E-E-A-T e IA.</p></div></div>
+    <div class="process-step reveal"><div class="step-num">04</div><div class="step-content"><h3 data-i18n="step4_t">Link Building & Autoridad</h3><p data-i18n="step4_d">Construcción de backlinks de alta autoridad y brand mentions para confianza.</p></div></div>
+    <div class="process-step reveal"><div class="step-num">05</div><div class="step-content"><h3 data-i18n="step5_t">Medición, Reporte & Escala</h3><p data-i18n="step5_d">Dashboards en Power BI + GA4. Reportes de posiciones, tráfico, citas en IA y ROI.</p></div></div>
   </div>
 </section>
 
 <section id="skills">
-  <div class="section-label">Tecnologías</div>
-  <h2 class="section-title reveal">Stack Tecnológico</h2>
-  <p class="section-sub reveal">Herramientas líderes combinadas con data science para SEO de alto rendimiento.</p>
+  <div class="section-label" data-i18n="skills_label">Tecnologías</div>
+  <h2 class="section-title reveal" data-i18n="skills_title">Stack Tecnológico</h2>
+  <p class="section-sub reveal" data-i18n="skills_sub">Herramientas líderes combinadas con data science para SEO de alto rendimiento.</p>
   <div class="skills-grid">
     <div class="skill-item reveal"><span>🔍</span><span>Google GSC</span></div>
     <div class="skill-item reveal"><span>🐍</span><span>Python</span></div>
@@ -524,19 +558,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- SECCIÓN DE CONTACTO CON CHAT DE TAWK.TO -->
 <section id="contact">
-  <div class="section-label">Hablemos</div>
-  <h2 class="section-title">¿Listo para dominar<br>los buscadores?</h2>
-  <p class="contact-sub">Chatea con nosotros y descubre cómo podemos potenciar tu presencia digital.</p>
-  <button class="chat-button" onclick="openTawk()">
+  <div class="section-label" data-i18n="contact_label">Hablemos</div>
+  <h2 class="section-title" data-i18n-html="contact_title">¿Listo para dominar<br>los buscadores?</h2>
+  <p class="contact-sub" data-i18n="contact_sub">Chatea con nosotros y descubre cómo podemos potenciar tu presencia digital.</p>
+  <button class="chat-button" onclick="openTawk()" data-i18n="contact_btn">
     💬 Chatear ahora con un experto
   </button>
-  <p class="chat-note">📱 Respuesta en menos de 5 minutos | Sin compromiso</p>
+  <p class="chat-note" data-i18n="contact_note">📱 Respuesta en menos de 5 minutos | Sin compromiso</p>
 </section>
 
 <footer>
   <div class="footer-left"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300f0ff'/%3E%3Ctext x='50' y='67' text-anchor='middle' fill='%230a0a0f' font-size='40'%3EPT%3C/text%3E%3C/svg%3E" alt="Logo"><div class="footer-brand">Páginas Web <span>Total</span></div></div>
-  <div class="footer-copy">© 2026 Páginas Web Total. Todos los derechos reservados. | SEO & GEO Agency</div>
-  <div style="display:flex;gap:20px"><a href="#services" style="color:var(--silver);font-size:0.7rem;text-decoration:none">Servicios</a><a href="#geo" style="color:var(--silver);font-size:0.7rem;text-decoration:none">GEO</a><a href="#contact" style="color:var(--silver);font-size:0.7rem;text-decoration:none">Contacto</a></div>
+  <div class="footer-copy" data-i18n="footer_copy">© 2026 Páginas Web Total. Todos los derechos reservados. | SEO & GEO Agency</div>
+  <div style="display:flex;gap:20px"><a href="#services" style="color:var(--silver);font-size:0.7rem;text-decoration:none" data-i18n="nav_services">Servicios</a><a href="#geo" style="color:var(--silver);font-size:0.7rem;text-decoration:none" data-i18n="nav_geo">GEO</a><a href="#contact" style="color:var(--silver);font-size:0.7rem;text-decoration:none" data-i18n="nav_contact">Contacto</a></div>
 </footer>
 
 <script>
@@ -633,7 +667,7 @@ function openTawk(){
     Tawk_API.maximize();
     Tawk_API.showWidget();
   } else {
-    alert('El chat está cargando. Por favor espera unos segundos y vuelve a intentarlo.');
+    alert((window.__I18N && window.__lang && window.__I18N[window.__lang] && window.__I18N[window.__lang].__alert) || 'El chat está cargando. Por favor espera unos segundos y vuelve a intentarlo.');
     if(!document.querySelector('script[src*="embed.tawk.to"]')){
       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
       s1.async=true;
@@ -653,5 +687,176 @@ window.addEventListener('load', function(){
   }
 });
 </script>
+<!-- ================== MOTOR BILINGÜE ES / EN ================== -->
+<script>
+(function(){
+  const I18N = {
+    es: {
+      __meta: {
+        title: "Páginas Web Total | Agencia de Marketing Digital & SEO Avanzado",
+        desc: "Agencia especializada en posicionamiento web, SEO técnico, GEO y visibilidad en motores de búsqueda generativa: Google AI Overviews, ChatGPT, Perplexity, Gemini.",
+        ogTitle: "Páginas Web Total | SEO & GEO Agency",
+        ogDesc: "Posicionamos tu negocio en Google, Bing, ChatGPT, Gemini, Perplexity y AI Overviews."
+      },
+      __alert: "El chat está cargando. Por favor espera unos segundos y vuelve a intentarlo.",
+      float_badge: "💬 Chatea con nosotros",
+      nav_services: "Servicios", nav_geo: "GEO", nav_process: "Proceso",
+      nav_skills: "Expertise", nav_contact: "Contacto", nav_cta: "Cotiza Gratis",
+      hero_badge: "🚀 Agencia Activa — Posicionamos desde 2012",
+      hero_title: "Domina los<br><span class=\"line-neon\">Resultados de Búsqueda.</span>",
+      hero_sub: "Posicionamos tu negocio en Google, Bing, Yahoo y en los nuevos motores de IA: ChatGPT, Gemini, Perplexity y Google AI Overviews.",
+      hero_btn1: "Quiero posicionarme", hero_btn2: "Ver servicios",
+      stat_projects: "Proyectos SEO", stat_countries: "Países", stat_industries: "Industrias", stat_years: "Años exp.",
+      services_label: "Lo que hacemos",
+      services_title: "Servicios de Posicionamiento<br>de Alto Impacto",
+      services_sub: "Cada estrategia está diseñada para generar visibilidad real, tráfico orgánico calificado y citas en motores generativos.",
+      svc1_t: "SEO Técnico", svc1_d: "Auditoría profunda, Crawl Budget, Core Web Vitals, datos estructurados Schema.org, arquitectura optimizada.",
+      svc2_t: "SEO de Contenidos", svc2_d: "Keyword research, mapeo semántico, clústeres de contenido y optimización E-E-A-T para autoridad real.",
+      svc3_t: "GEO — Motor Generativo", svc3_d: "Optimizamos tu contenido para ser citado por ChatGPT, Gemini, AI Overviews y Perplexity. La nueva frontera del SEO.",
+      svc4_t: "Link Building", svc4_d: "Construcción de autoridad con backlinks de calidad desde medios especializados y brand mentions.",
+      svc5_t: "SEO Programático", svc5_d: "Creación de páginas en escala usando datos estructurados y automatización para dominar nichos.",
+      svc6_t: "Analítica & Reportes", svc6_d: "Dashboards en tiempo real con GA4 y Power BI. Medimos visibilidad tradicional y generativa.",
+      why_label: "Por qué elegirnos",
+      why_title: "Resultados medibles,<br>no promesas vacías.",
+      why1_t: "Enfoque dual SEO + GEO", why1_d: "Posicionamos en resultados orgánicos clásicos Y en respuestas de IA generativa.",
+      why2_t: "35+ industrias ejecutadas", why2_d: "Ecommerce, SaaS, salud, fintech y más. Conocemos los matices por vertical.",
+      why3_t: "Data Science aplicado al SEO", why3_d: "Usamos Python, SQL y Power BI para decisiones basadas en evidencia.",
+      why4_t: "Transparencia total", why4_d: "Acceso a dashboards, logs y reportes mensuales. Todo medible y explicado.",
+      geo_label: "Motores Generativos",
+      geo_title: "El SEO evolucionó.<br>¿Está tu marca en la IA?",
+      geo_sub: "En 2026, el 40% de las búsquedas se resuelven con IA sin clic. Ser citado es la nueva posición #1.",
+      eng1_d: "Aparece en las respuestas generativas de Google.",
+      eng2_d: "200M+ usuarios semanales. Tu marca debe ser la respuesta citada.",
+      eng3_d: "Optimizamos para que Gemini cite tu sitio como fuente de autoridad.",
+      eng4_d: "100M+ consultas mensuales. Posicionamos tu contenido para aparecer ahí.",
+      res_projects: "Proyectos ejecutados", res_countries: "Países", res_industries: "Industrias", res_years: "Años experiencia",
+      process_label: "Metodología", process_title: "Cómo trabajamos",
+      process_sub: "Un proceso probado que combina rigor técnico, estrategia de contenido y optimización para IA.",
+      step1_t: "Diagnóstico & Benchmarking", step1_d: "Auditoría técnica, análisis de visibilidad y benchmarking de competencia en SEO tradicional y GEO.",
+      step2_t: "Estrategia de Keywords & Contenido", step2_d: "Investigación semántica, clasificación por intención y análisis de visibilidad generativa.",
+      step3_t: "Implementación Técnica & Contenido", step3_d: "Optimización de metadatos, Schema.org, arquitectura interna y contenido para E-E-A-T e IA.",
+      step4_t: "Link Building & Autoridad", step4_d: "Construcción de backlinks de alta autoridad y brand mentions para confianza.",
+      step5_t: "Medición, Reporte & Escala", step5_d: "Dashboards en Power BI + GA4. Reportes de posiciones, tráfico, citas en IA y ROI.",
+      skills_label: "Tecnologías", skills_title: "Stack Tecnológico",
+      skills_sub: "Herramientas líderes combinadas con data science para SEO de alto rendimiento.",
+      contact_label: "Hablemos",
+      contact_title: "¿Listo para dominar<br>los buscadores?",
+      contact_sub: "Chatea con nosotros y descubre cómo podemos potenciar tu presencia digital.",
+      contact_btn: "💬 Chatear ahora con un experto",
+      contact_note: "📱 Respuesta en menos de 5 minutos | Sin compromiso",
+      footer_copy: "© 2026 Páginas Web Total. Todos los derechos reservados. | SEO & GEO Agency"
+    },
+    en: {
+      __meta: {
+        title: "Páginas Web Total | Digital Marketing Agency & Advanced SEO",
+        desc: "Agency specialized in web ranking, technical SEO, GEO and visibility in generative search engines: Google AI Overviews, ChatGPT, Perplexity, Gemini.",
+        ogTitle: "Páginas Web Total | SEO & GEO Agency",
+        ogDesc: "We rank your business on Google, Bing, ChatGPT, Gemini, Perplexity and AI Overviews."
+      },
+      __alert: "The chat is loading. Please wait a few seconds and try again.",
+      float_badge: "💬 Chat with us",
+      nav_services: "Services", nav_geo: "GEO", nav_process: "Process",
+      nav_skills: "Expertise", nav_contact: "Contact", nav_cta: "Free Quote",
+      hero_badge: "🚀 Active Agency — Ranking Brands Since 2012",
+      hero_title: "Dominate the<br><span class=\"line-neon\">Search Results.</span>",
+      hero_sub: "We rank your business on Google, Bing, Yahoo and the new AI engines: ChatGPT, Gemini, Perplexity and Google AI Overviews.",
+      hero_btn1: "I want to rank", hero_btn2: "View services",
+      stat_projects: "SEO Projects", stat_countries: "Countries", stat_industries: "Industries", stat_years: "Years exp.",
+      services_label: "What we do",
+      services_title: "High-Impact<br>Ranking Services",
+      services_sub: "Every strategy is built to generate real visibility, qualified organic traffic and citations in generative engines.",
+      svc1_t: "Technical SEO", svc1_d: "Deep audits, crawl budget, Core Web Vitals, Schema.org structured data, optimized architecture.",
+      svc2_t: "Content SEO", svc2_d: "Keyword research, semantic mapping, content clusters and E-E-A-T optimization for real authority.",
+      svc3_t: "GEO — Generative Engine", svc3_d: "We optimize your content to be cited by ChatGPT, Gemini, AI Overviews and Perplexity. The new SEO frontier.",
+      svc4_t: "Link Building", svc4_d: "Authority building with quality backlinks from specialized media and brand mentions.",
+      svc5_t: "Programmatic SEO", svc5_d: "Page creation at scale using structured data and automation to dominate niches.",
+      svc6_t: "Analytics & Reporting", svc6_d: "Real-time dashboards with GA4 and Power BI. We measure traditional and generative visibility.",
+      why_label: "Why choose us",
+      why_title: "Measurable results,<br>not empty promises.",
+      why1_t: "Dual SEO + GEO approach", why1_d: "We rank in classic organic results AND in generative AI answers.",
+      why2_t: "35+ industries delivered", why2_d: "Ecommerce, SaaS, healthcare, fintech and more. We know the nuances of each vertical.",
+      why3_t: "Data Science applied to SEO", why3_d: "We use Python, SQL and Power BI for evidence-based decisions.",
+      why4_t: "Full transparency", why4_d: "Access to dashboards, logs and monthly reports. Everything measurable and explained.",
+      geo_label: "Generative Engines",
+      geo_title: "SEO has evolved.<br>Is your brand in AI?",
+      geo_sub: "In 2026, 40% of searches are resolved by AI with no click. Being cited is the new #1 position.",
+      eng1_d: "Appear in Google's generative answers.",
+      eng2_d: "200M+ weekly users. Your brand must be the cited answer.",
+      eng3_d: "We optimize so Gemini cites your site as an authority source.",
+      eng4_d: "100M+ monthly queries. We position your content to appear there.",
+      res_projects: "Projects delivered", res_countries: "Countries", res_industries: "Industries", res_years: "Years of experience",
+      process_label: "Methodology", process_title: "How we work",
+      process_sub: "A proven process combining technical rigor, content strategy and AI optimization.",
+      step1_t: "Diagnosis & Benchmarking", step1_d: "Technical audit, visibility analysis and competitor benchmarking in traditional SEO and GEO.",
+      step2_t: "Keyword & Content Strategy", step2_d: "Semantic research, intent classification and generative visibility analysis.",
+      step3_t: "Technical & Content Implementation", step3_d: "Metadata optimization, Schema.org, internal architecture and content for E-E-A-T and AI.",
+      step4_t: "Link Building & Authority", step4_d: "High-authority backlink building and brand mentions for trust.",
+      step5_t: "Measurement, Reporting & Scale", step5_d: "Power BI + GA4 dashboards. Reports on rankings, traffic, AI citations and ROI.",
+      skills_label: "Technologies", skills_title: "Tech Stack",
+      skills_sub: "Leading tools combined with data science for high-performance SEO.",
+      contact_label: "Let's talk",
+      contact_title: "Ready to dominate<br>the search engines?",
+      contact_sub: "Chat with us and discover how we can boost your digital presence.",
+      contact_btn: "💬 Chat now with an expert",
+      contact_note: "📱 Reply in under 5 minutes | No commitment",
+      footer_copy: "© 2026 Páginas Web Total. All rights reserved. | SEO & GEO Agency"
+    }
+  };
+
+  window.__I18N = I18N;
+  window.__lang = 'es';
+
+  function detectLang(){
+    var p = location.pathname.toLowerCase();
+    if(/(^|\/)en(\/|$)/.test(p)) return 'en';
+    var q = new URLSearchParams(location.search).get('lang');
+    if(q === 'en' || q === 'es') return q;
+    try { var s = localStorage.getItem('pwt_lang'); if(s === 'en' || s === 'es') return s; } catch(e){}
+    return 'es';
+  }
+
+  function setAttr(sel, attr, val){ var e = document.querySelector(sel); if(e) e.setAttribute(attr, val); }
+
+  function apply(lang){
+    var dict = I18N[lang] || I18N.es;
+    window.__lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k = el.getAttribute('data-i18n-html');
+      if(dict[k] != null) el.innerHTML = dict[k];
+    });
+    var m = dict.__meta;
+    document.documentElement.lang = lang;
+    if(m){
+      document.title = m.title;
+      setAttr('#pageDesc', 'content', m.desc);
+      setAttr('#ogTitle', 'content', m.ogTitle);
+      setAttr('#ogDesc', 'content', m.ogDesc);
+    }
+    setAttr('#ogLocale', 'content', lang === 'en' ? 'en_US' : 'es_ES');
+    setAttr('#canonicalTag', 'href', lang === 'en' ? 'https://paginaswebtotal.com/en/' : 'https://paginaswebtotal.com/');
+    var be = document.getElementById('langEs'), bn = document.getElementById('langEn');
+    if(be) be.classList.toggle('active', lang === 'es');
+    if(bn) bn.classList.toggle('active', lang === 'en');
+  }
+
+  window.setLang = function(lang, userClick){
+    if(lang !== 'en' && lang !== 'es') lang = 'es';
+    apply(lang);
+    try { localStorage.setItem('pwt_lang', lang); } catch(e){}
+    if(userClick){
+      var url = (lang === 'en') ? '/en/' : '/';
+      try { history.replaceState(null, '', url + location.hash); } catch(e){}
+    }
+  };
+
+  // Aplicar idioma de inmediato (el DOM ya está parseado en este punto)
+  apply(detectLang());
+})();
+</script>
+<!-- ================ FIN MOTOR BILINGÜE ================ -->
 </body>
 </html>
