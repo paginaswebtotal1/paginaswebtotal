@@ -1,0 +1,4 @@
+# === Opcional: hace que /en sirva la versión en inglés sin carpeta /en ===
+# Úsalo SOLO si NO subes la carpeta /en/. Requiere Apache/LiteSpeed (cPanel).
+RewriteEngine On
+RewriteRule ^en/?$ /index.html [L]
