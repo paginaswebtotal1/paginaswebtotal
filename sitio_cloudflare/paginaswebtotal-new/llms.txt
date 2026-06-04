@@ -1,0 +1,27 @@
+# Páginas Web Total
+
+> Agencia SEO y GEO especializada en posicionamiento web y visibilidad en motores de búsqueda generativa (Google AI Overviews, ChatGPT, Gemini, Perplexity). Activa desde 2012 en más de 15 países y 35 industrias.
+
+## Servicios principales
+- [SEO Técnico](https://paginaswebtotal.com/): Auditorías, Core Web Vitals, Schema.org, arquitectura optimizada
+- [GEO — Generative Engine Optimization](https://paginaswebtotal.com/#geo): Optimización de contenido para ser citado por ChatGPT, Gemini, AI Overviews y Perplexity
+- [SEO de Contenidos](https://paginaswebtotal.com/#servicios): Keyword research, clústeres semánticos, E-E-A-T
+- [Link Building](https://paginaswebtotal.com/#servicios): Backlinks de alta autoridad y brand mentions
+- [SEO Programático](https://paginaswebtotal.com/#servicios): Páginas a escala con datos estructurados
+- [Analítica & Reportes](https://paginaswebtotal.com/#servicios): Dashboards GA4 + Power BI, visibilidad tradicional y generativa
+
+## Por qué elegirnos
+- Enfoque dual SEO + GEO: resultados orgánicos clásicos Y citas en respuestas de IA
+- Data Science aplicado: Python, SQL y Power BI para decisiones basadas en evidencia
+- 14+ años de experiencia desde 2012
+- 35+ industrias ejecutadas: ecommerce, SaaS, salud, fintech y más
+
+## Idiomas disponibles
+- [Español](https://paginaswebtotal.com/): versión principal
+- [English](https://paginaswebtotal.com/en/): English version
+
+## Contacto
+- [Cotización gratuita](https://paginaswebtotal.com/#contacto): Chat con respuesta en menos de 5 minutos
+
+## Optional
+- [llms-full.txt](https://paginaswebtotal.com/llms-full.txt)

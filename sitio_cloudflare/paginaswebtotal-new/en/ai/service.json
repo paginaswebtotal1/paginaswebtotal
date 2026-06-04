@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/en/",
+  "inLanguage": "en",
+  "description": "SEO and GEO agency specialized in organic web ranking and visibility in generative search engines.",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Ranking Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Technical SEO",
+          "description": "Deep audits, Crawl Budget, Core Web Vitals, Schema.org structured data, optimized architecture for search engines and AI."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — Generative Engine Optimization",
+          "description": "Content optimization to be cited by ChatGPT, Gemini, Google AI Overviews and Perplexity. Includes llms.txt, advanced schema and citable structure."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AEO — Answer Engine Optimization",
+          "description": "Optimization to appear in direct answers from answer engines. Question-answer structure, FAQPage structured data and topical authority."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content SEO",
+          "description": "Keyword research, semantic mapping, content clusters and E-E-A-T optimization for real topical authority."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Link Building",
+          "description": "Authority building with quality backlinks from specialized media and organic brand mentions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Programmatic SEO",
+          "description": "Page creation at scale using structured data and automation to dominate long-tail niches."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Analytics & Reporting",
+          "description": "Real-time dashboards with GA4 and Power BI. Traditional and generative visibility measurement with monthly reports."
+        }
+      }
+    ]
+  }
+}

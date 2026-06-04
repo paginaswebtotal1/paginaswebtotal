@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es",
+  "url": "https://paginaswebtotal.com/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es GEO (Generative Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO es la optimización de tu contenido para ser citado y recomendado por motores de IA como ChatGPT, Gemini, Perplexity y Google AI Overviews. Es la evolución del SEO para la era de la búsqueda generativa donde el 40% de las consultas se resuelven con IA sin clic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre SEO y GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El SEO optimiza para aparecer en resultados de búsqueda tradicionales (páginas de resultados de Google). El GEO optimiza para que tu contenido sea citado directamente en respuestas generadas por IA. Páginas Web Total trabaja ambos en paralelo con un enfoque dual SEO+GEO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué países operan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabajamos con clientes en más de 15 países, principalmente en España, México, Colombia, Argentina y Estados Unidos, ejecutando estrategias SEO y GEO en más de 35 industrias incluyendo ecommerce, SaaS, salud y fintech."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo lleva ver resultados en SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los primeros resultados técnicos se observan en 4-8 semanas. Mejoras significativas en posicionamiento orgánico ocurren entre 3-6 meses. Para GEO, las citas en motores de IA pueden comenzar en 6-12 semanas tras la implementación correcta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es AEO (Answer Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO es la optimización para aparecer en respuestas directas de motores de respuesta como los fragmentos destacados de Google, ChatGPT y Perplexity. Implica estructurar el contenido en formato pregunta-respuesta con datos estructurados, lenguaje claro y autoridad temática demostrable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen auditorías SEO y GEO gratuitas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos una cotización y diagnóstico inicial gratuito. Contáctanos a través del chat para recibir una evaluación preliminar de tu situación actual en SEO y GEO sin ningún costo y con respuesta en menos de 5 minutos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo optimizan para Google AI Overviews?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Optimizamos implementando Schema.org avanzado, estructurando el contenido para responder preguntas directamente, mejorando señales E-E-A-T, obteniendo citas de fuentes autorizadas, y asegurando que los bots de Google (Googlebot, Google-Extended) puedan rastrear e indexar el sitio sin restricciones."
+      }
+    }
+  ]
+}

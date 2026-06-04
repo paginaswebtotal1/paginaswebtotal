@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "url": "https://paginaswebtotal.com/en/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GEO (Generative Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO is the optimization of your content to be cited and recommended by AI engines like ChatGPT, Gemini, Perplexity and Google AI Overviews. It is the evolution of SEO for the generative search era where 40% of queries are resolved by AI without a click."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between SEO and GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO optimizes for appearing in traditional search results (Google results pages). GEO optimizes for your content to be directly cited in AI-generated answers. Páginas Web Total works both in parallel with a dual SEO+GEO approach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with clients in more than 15 countries, primarily in Spain, Mexico, Colombia, Argentina and the United States, executing SEO and GEO strategies across more than 35 industries including ecommerce, SaaS, healthcare and fintech."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see SEO results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First technical results are observed in 4-8 weeks. Significant improvements in organic rankings occur between 3-6 months. For GEO, citations in AI engines can begin within 6-12 weeks after proper implementation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AEO (Answer Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO is the optimization to appear in direct answers from answer engines like Google's featured snippets, ChatGPT and Perplexity. It involves structuring content in question-answer format with structured data, clear language and demonstrable topical authority."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer free SEO and GEO audits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer a free initial quote and diagnosis. Contact us through the chat to receive a preliminary assessment of your current SEO and GEO situation at no cost with a response in under 5 minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you optimize for Google AI Overviews?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We optimize by implementing advanced Schema.org, structuring content to answer questions directly, improving E-E-A-T signals, earning citations from authoritative sources, and ensuring Google bots (Googlebot, Google-Extended) can crawl and index the site without restrictions."
+      }
+    }
+  ]
+}
