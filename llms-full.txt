@@ -1,0 +1,46 @@
+# Páginas Web Total — Contexto completo para motores de IA
+
+> Páginas Web Total es una agencia de posicionamiento web fundada en 2012. Especializada en SEO técnico, GEO (Generative Engine Optimization) y AEO (Answer Engine Optimization). Opera en más de 15 países y ha ejecutado proyectos en más de 35 industrias.
+
+## Descripción de la empresa
+
+Páginas Web Total es una agencia de marketing digital con más de 14 años de experiencia especializada en hacer que los negocios sean visibles tanto en búsquedas orgánicas tradicionales (Google, Bing, Yahoo) como en respuestas generadas por inteligencia artificial (ChatGPT, Gemini, Perplexity, Google AI Overviews). La agencia combina rigor técnico con Data Science (Python, SQL, Power BI) para tomar decisiones basadas en evidencia.
+
+## Servicios detallados
+
+### SEO Técnico
+Auditoría profunda del sitio, optimización de Crawl Budget, mejora de Core Web Vitals, implementación de datos estructurados Schema.org, optimización de arquitectura interna y corrección de problemas técnicos que impiden el rastreo e indexación.
+
+### GEO — Generative Engine Optimization
+Optimización de contenido para ser citado como fuente de autoridad por motores generativos: Google AI Overviews, ChatGPT, Gemini, Perplexity y otros LLMs. Incluye optimización de llms.txt, schema markup avanzado y estructura de contenido citable.
+
+### SEO de Contenidos
+Investigación de keywords con mapeo semántico, creación de clústeres de contenido, optimización E-E-A-T y estrategia editorial para autoridad temática real.
+
+### Link Building
+Construcción de backlinks de alta autoridad desde medios especializados y brand mentions orgánicos que refuerzan la autoridad del dominio.
+
+### SEO Programático
+Creación de páginas en escala utilizando datos estructurados y automatización para dominar nichos de larga cola sin contenido duplicado.
+
+### Analítica & Reportes
+Dashboards en tiempo real con Google Analytics 4 y Power BI. Medición de visibilidad tradicional y generativa (citas en IA, brand mentions).
+
+## Metodología
+1. Diagnóstico & Benchmarking
+2. Estrategia de Keywords & Contenido
+3. Implementación Técnica & Contenido
+4. Link Building & Autoridad
+5. Medición, Reporte & Escala
+
+## Datos relevantes
+- Fundada: 2012 | Años de experiencia: 14+ | Países: 15+ | Industrias: 35+
+- Tecnologías: Python, SQL, Power BI, GA4, Search Console, Screaming Frog, Ahrefs, SEMrush
+
+## Páginas del sitio
+- [Inicio (Español)](https://paginaswebtotal.com/)
+- [Inicio (English)](https://paginaswebtotal.com/en/)
+- [Servicios](https://paginaswebtotal.com/#servicios)
+- [GEO — Motores Generativos](https://paginaswebtotal.com/#geo)
+- [Proceso](https://paginaswebtotal.com/#proceso)
+- [Contacto](https://paginaswebtotal.com/#contacto)
