@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/zh/",
+  "description": "拥有14年以上经验的SEO和GEO机构。我们在Google、Bing以及生成式AI引擎中获得排名：ChatGPT、Gemini、Perplexity和Google AI Overviews。",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "inLanguage": "zh-Hans",
+  "knowsAbout": [
+    "Technical SEO",
+    "Generative Engine Optimization",
+    "Answer Engine Optimization",
+    "Link Building",
+    "Content SEO",
+    "Programmatic SEO",
+    "Core Web Vitals",
+    "Schema.org",
+    "E-E-A-T"
+  ],
+  "slogan": "我们在Google和AI中获得排名。可衡量的成果，而非空洞承诺。",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "availableLanguage": [
+      "Spanish",
+      "English",
+      "Chinese"
+    ],
+    "url": "https://paginaswebtotal.com/zh/#contacto"
+  },
+  "sameAs": [
+    "https://paginaswebtotal.com/",
+    "https://paginaswebtotal.com/en/",
+    "https://paginaswebtotal.com/fr/",
+    "https://paginaswebtotal.com/ru/",
+    "https://paginaswebtotal.com/pt/",
+    "https://paginaswebtotal.com/hi/"
+  ]
+}

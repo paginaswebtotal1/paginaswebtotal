@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/pt/",
+  "description": "Agência de SEO e GEO com mais de 14 anos de experiência. Posicionamos no Google, Bing e nos mecanismos generativos de IA: ChatGPT, Gemini, Perplexity e Google AI Overviews.",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "inLanguage": "pt-BR",
+  "knowsAbout": [
+    "Technical SEO",
+    "Generative Engine Optimization",
+    "Answer Engine Optimization",
+    "Link Building",
+    "Content SEO",
+    "Programmatic SEO",
+    "Core Web Vitals",
+    "Schema.org",
+    "E-E-A-T"
+  ],
+  "slogan": "Posicionamos no Google e na IA. Resultados mensuráveis, não promessas vazias.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "availableLanguage": [
+      "Spanish",
+      "English",
+      "Portuguese"
+    ],
+    "url": "https://paginaswebtotal.com/pt/#contacto"
+  },
+  "sameAs": [
+    "https://paginaswebtotal.com/",
+    "https://paginaswebtotal.com/en/",
+    "https://paginaswebtotal.com/fr/",
+    "https://paginaswebtotal.com/ru/",
+    "https://paginaswebtotal.com/zh/",
+    "https://paginaswebtotal.com/hi/"
+  ]
+}

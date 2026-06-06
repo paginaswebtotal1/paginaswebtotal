@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/hi/",
+  "inLanguage": "hi",
+  "description": "14+ वर्षों के अनुभव वाली SEO और GEO एजेंसी। हम Google, Bing और जनरेटिव AI इंजनों में रैंक कराते हैं: ChatGPT, Gemini, Perplexity और Google AI Overviews।",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Ranking Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "तकनीकी SEO",
+          "description": "गहन ऑडिट, क्रॉल बजट, Core Web Vitals, Schema.org संरचित डेटा, सर्च इंजन और AI के लिए अनुकूलित आर्किटेक्चर।"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — जनरेटिव इंजन ऑप्टिमाइज़ेशन",
+          "description": "ChatGPT, Gemini, Google AI Overviews और Perplexity द्वारा उद्धृत होने के लिए कंटेंट अनुकूलन। इसमें llms.txt, उन्नत schema और उद्धरण योग्य संरचना शामिल है।"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AEO — आंसर इंजन ऑप्टिमाइज़ेशन",
+          "description": "आंसर इंजनों के प्रत्यक्ष उत्तरों में दिखने के लिए अनुकूलन। प्रश्न-उत्तर संरचना, FAQPage डेटा और विषयगत अधिकार।"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "कंटेंट SEO",
+          "description": "कीवर्ड रिसर्च, सिमेंटिक मैपिंग, कंटेंट क्लस्टर और वास्तविक विषयगत अधिकार के लिए E-E-A-T अनुकूलन।"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "लिंक बिल्डिंग",
+          "description": "विशेष मीडिया से गुणवत्तापूर्ण बैकलिंक और ऑर्गेनिक ब्रांड उल्लेखों के साथ अधिकार निर्माण।"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "प्रोग्रामेटिक SEO",
+          "description": "लॉन्ग-टेल निचे पर हावी होने के लिए संरचित डेटा और स्वचालन का उपयोग करके बड़े पैमाने पर पेज निर्माण।"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "एनालिटिक्स और रिपोर्ट",
+          "description": "GA4 और Power BI के साथ रीयल-टाइम डैशबोर्ड। मासिक रिपोर्ट के साथ पारंपरिक और जनरेटिव दृश्यता का मापन।"
+        }
+      }
+    ]
+  }
+}

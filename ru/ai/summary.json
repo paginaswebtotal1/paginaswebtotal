@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/ru/",
+  "description": "Агентство SEO и GEO с опытом более 14 лет. Продвигаем в Google, Bing и генеративных ИИ-системах: ChatGPT, Gemini, Perplexity и Google AI Overviews.",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "inLanguage": "ru",
+  "knowsAbout": [
+    "Technical SEO",
+    "Generative Engine Optimization",
+    "Answer Engine Optimization",
+    "Link Building",
+    "Content SEO",
+    "Programmatic SEO",
+    "Core Web Vitals",
+    "Schema.org",
+    "E-E-A-T"
+  ],
+  "slogan": "Продвигаем в Google и в ИИ. Измеримые результаты, а не пустые обещания.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "availableLanguage": [
+      "Spanish",
+      "English",
+      "Russian"
+    ],
+    "url": "https://paginaswebtotal.com/ru/#contacto"
+  },
+  "sameAs": [
+    "https://paginaswebtotal.com/",
+    "https://paginaswebtotal.com/en/",
+    "https://paginaswebtotal.com/fr/",
+    "https://paginaswebtotal.com/zh/",
+    "https://paginaswebtotal.com/pt/",
+    "https://paginaswebtotal.com/hi/"
+  ]
+}

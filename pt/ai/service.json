@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/pt/",
+  "inLanguage": "pt-BR",
+  "description": "Agência de SEO e GEO com mais de 14 anos de experiência. Posicionamos no Google, Bing e nos mecanismos generativos de IA: ChatGPT, Gemini, Perplexity e Google AI Overviews.",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Ranking Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Técnico",
+          "description": "Auditoria profunda, Crawl Budget, Core Web Vitals, dados estruturados Schema.org, arquitetura otimizada para buscadores e IA."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — Generative Engine Optimization",
+          "description": "Otimização de conteúdo para ser citado por ChatGPT, Gemini, Google AI Overviews e Perplexity. Inclui llms.txt, schema avançado e estrutura citável."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AEO — Answer Engine Optimization",
+          "description": "Otimização para aparecer em respostas diretas de mecanismos de resposta. Estrutura pergunta-resposta, dados FAQPage e autoridade temática."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO de Conteúdo",
+          "description": "Pesquisa de palavras-chave, mapeamento semântico, clusters de conteúdo e otimização E-E-A-T para autoridade temática real."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Link Building",
+          "description": "Construção de autoridade com backlinks de qualidade de mídias especializadas e menções orgânicas à marca."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Programático",
+          "description": "Criação de páginas em escala usando dados estruturados e automação para dominar nichos de cauda longa."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Analytics & Relatórios",
+          "description": "Dashboards em tempo real com GA4 e Power BI. Medição de visibilidade tradicional e generativa com relatórios mensais."
+        }
+      }
+    ]
+  }
+}

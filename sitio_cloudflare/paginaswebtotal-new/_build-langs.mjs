@@ -622,19 +622,34 @@ function aiFaq(L){
   }, null, 2);
 }
 
+// ===== Sitemap con anotaciones hreflang (las 7 homes) =====
+function buildSitemap(){
+  const alt = LANGS.map(l => `      <xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${urlOf(l.folder)}"/>`).join('\n')
+    + `\n      <xhtml:link rel="alternate" hreflang="x-default" href="${BASE}/"/>`;
+  const urls = LANGS.map(l =>
+    `  <url>\n    <loc>${urlOf(l.folder)}</loc>\n${alt}\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`
+  ).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
+}
+
 // ===== Ejecutar =====
 const NEW = ['fr','ru','zh','pt','hi'];
-for(const L of LANGS){
-  const dir = L.folder ? join(ROOT, L.folder) : ROOT;
-  mkdirSync(dir, { recursive:true });
-  writeFileSync(join(dir,'index.html'), buildHtml(L), 'utf8');
-  console.log('index.html ->', L.folder||'(raíz)');
-  if(NEW.includes(L.key)){
-    const aidir = join(dir,'ai'); mkdirSync(aidir, { recursive:true });
-    writeFileSync(join(aidir,'summary.json'), aiSummary(L), 'utf8');
-    writeFileSync(join(aidir,'service.json'), aiService(L), 'utf8');
-    writeFileSync(join(aidir,'faq.json'), aiFaq(L), 'utf8');
-    console.log('  ai/*.json ->', L.folder);
+// Genera en AMBAS ubicaciones: copia de trabajo (paginaswebtotal-new) y RAIZ del repo (la que se publica)
+const REPO_ROOT = join(ROOT, '..', '..');
+const BASES = [ROOT, REPO_ROOT];
+for(const OUT of BASES){
+  for(const L of LANGS){
+    const dir = L.folder ? join(OUT, L.folder) : OUT;
+    mkdirSync(dir, { recursive:true });
+    writeFileSync(join(dir,'index.html'), buildHtml(L), 'utf8');
+    if(NEW.includes(L.key)){
+      const aidir = join(dir,'ai'); mkdirSync(aidir, { recursive:true });
+      writeFileSync(join(aidir,'summary.json'), aiSummary(L), 'utf8');
+      writeFileSync(join(aidir,'service.json'), aiService(L), 'utf8');
+      writeFileSync(join(aidir,'faq.json'), aiFaq(L), 'utf8');
+    }
   }
+  writeFileSync(join(OUT,'sitemap.xml'), buildSitemap(), 'utf8');
+  console.log('generado en ->', OUT);
 }
 console.log('OK');
