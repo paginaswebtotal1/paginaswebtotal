@@ -64,7 +64,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "分析与报告",
-          "description": "使用GA4和Power BI的实时仪表板。通过月度报告衡量传统与生成式可见度。"
+          "description": "使用GA4和Power BI的实时仪表板。通过月度报告衡量传统与生成式可见性。"
         }
       }
     ]
