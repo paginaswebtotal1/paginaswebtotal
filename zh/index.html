@@ -520,9 +520,37 @@ s0.parentNode.insertBefore(s1,s0);
     background: var(--neon-cyan); color: var(--black);
     box-shadow: 0 0 14px rgba(0,240,255,0.6);
   }
+  /* ===== DROPDOWN DE IDIOMA (móvil) ===== */
+  .lang-dropdown { display: none; position: relative; margin-left: 12px; }
+  .lang-dd-toggle {
+    display: flex; align-items: center; gap: 6px;
+    background: transparent; border: 1px solid var(--neon-cyan);
+    border-radius: 100px; padding: 6px 14px; cursor: pointer;
+    font-family: var(--font-display); font-weight: 700; font-size: 0.74rem;
+    letter-spacing: 0.08em; color: var(--neon-cyan); text-transform: uppercase;
+  }
+  .lang-dd-toggle .lang-caret { font-size: 0.6rem; transition: transform 0.2s; }
+  .lang-dropdown.open .lang-caret { transform: rotate(180deg); }
+  .lang-dd-menu {
+    position: absolute; top: calc(100% + 8px); right: 0;
+    background: rgba(17,24,39,0.98); backdrop-filter: blur(16px);
+    border: 1px solid var(--neon-cyan); border-radius: 14px;
+    padding: 6px; display: none; flex-direction: column; gap: 2px;
+    min-width: 160px; z-index: 1002;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.55);
+  }
+  .lang-dropdown.open .lang-dd-menu { display: flex; }
+  .lang-dd-item {
+    background: transparent; border: none; cursor: pointer; text-align: left;
+    font-family: var(--font-body); font-weight: 600; font-size: 0.88rem;
+    color: var(--silver-light); padding: 11px 14px; border-radius: 10px;
+    transition: all 0.18s; white-space: nowrap;
+  }
+  .lang-dd-item:hover { background: rgba(0,240,255,0.12); color: var(--white); }
+  .lang-dd-item.active { background: var(--neon-cyan); color: var(--black); }
   @media (max-width: 900px) {
-    .lang-switch { margin-left: 10px; }
-    .lang-btn { padding: 5px 10px; font-size: 0.7rem; }
+    .lang-switch { display: none; }
+    .lang-dropdown { display: block; }
   }
 </style>
 </head>
@@ -547,6 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
   </ul>
   <a href="#contact" class="nav-cta" data-i18n="nav_cta">Cotiza Gratis</a>
+  <!-- ===== LANG SWITCHER ===== -->
   <div class="lang-switch" role="group" aria-label="Language selector">
     <button class="lang-btn" data-lang="es" onclick="setLang('es', true)">ES</button>
     <button class="lang-btn" data-lang="en" onclick="setLang('en', true)">EN</button>
@@ -556,6 +585,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="lang-btn" data-lang="pt" onclick="setLang('pt', true)">PT</button>
     <button class="lang-btn" data-lang="hi" onclick="setLang('hi', true)">HI</button>
   </div>
+  <div class="lang-dropdown" id="langDropdown">
+    <button class="lang-dd-toggle" onclick="toggleLangMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Language selector">
+      <span id="langCurrent">ES</span><span class="lang-caret">▾</span>
+    </button>
+    <div class="lang-dd-menu" id="langMenu">
+      <button class="lang-dd-item" data-lang="es" onclick="setLang('es', true)">Español</button>
+      <button class="lang-dd-item" data-lang="en" onclick="setLang('en', true)">English</button>
+      <button class="lang-dd-item" data-lang="fr" onclick="setLang('fr', true)">Français</button>
+      <button class="lang-dd-item" data-lang="ru" onclick="setLang('ru', true)">Русский</button>
+      <button class="lang-dd-item" data-lang="zh" onclick="setLang('zh', true)">中文</button>
+      <button class="lang-dd-item" data-lang="pt" onclick="setLang('pt', true)">Português</button>
+      <button class="lang-dd-item" data-lang="hi" onclick="setLang('hi', true)">हिन्दी</button>
+    </div>
+  </div>
+  <!-- ===== FIN LANG SWITCHER ===== -->
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
@@ -1440,6 +1484,7 @@ window.addEventListener('load', function(){
         "canonical": "https://paginaswebtotal.com/hi/"
     }
 };
+  const LBL = {"es":"ES","en":"EN","fr":"FR","ru":"RU","zh":"中文","pt":"PT","hi":"HI"};
   const KEYS = Object.keys(CFG);
   window.__I18N = I18N; window.__lang = 'es';
 
@@ -1475,10 +1520,31 @@ window.addEventListener('load', function(){
     document.querySelectorAll('.lang-btn').forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-lang') === lang);
     });
+    document.querySelectorAll('.lang-dd-item').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    var lc = document.getElementById('langCurrent');
+    if(lc) lc.textContent = LBL[lang] || lang.toUpperCase();
   }
+  function closeMenu(){
+    var dd = document.getElementById('langDropdown');
+    if(dd){ dd.classList.remove('open'); var t = dd.querySelector('.lang-dd-toggle'); if(t) t.setAttribute('aria-expanded','false'); }
+  }
+  window.toggleLangMenu = function(e){
+    if(e){ e.preventDefault(); e.stopPropagation(); }
+    var dd = document.getElementById('langDropdown');
+    if(!dd) return;
+    var open = dd.classList.toggle('open');
+    var t = dd.querySelector('.lang-dd-toggle'); if(t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  document.addEventListener('click', function(ev){
+    var dd = document.getElementById('langDropdown');
+    if(dd && dd.classList.contains('open') && !dd.contains(ev.target)) closeMenu();
+  });
   window.setLang = function(lang, userClick){
     if(!CFG[lang]) lang = 'es';
     apply(lang);
+    closeMenu();
     try { localStorage.setItem('pwt_lang', lang); } catch(e){}
     if(userClick){ try { history.replaceState(null, '', CFG[lang].path + location.hash); } catch(e){} }
   };

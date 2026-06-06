@@ -509,6 +509,7 @@ function engineScript(){
 (function(){
   const I18N = ${dictJson};
   const CFG = ${cfgJson};
+  const LBL = ${JSON.stringify(LABELS)};
   const KEYS = Object.keys(CFG);
   window.__I18N = I18N; window.__lang = 'es';
 
@@ -544,10 +545,31 @@ function engineScript(){
     document.querySelectorAll('.lang-btn').forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-lang') === lang);
     });
+    document.querySelectorAll('.lang-dd-item').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    var lc = document.getElementById('langCurrent');
+    if(lc) lc.textContent = LBL[lang] || lang.toUpperCase();
   }
+  function closeMenu(){
+    var dd = document.getElementById('langDropdown');
+    if(dd){ dd.classList.remove('open'); var t = dd.querySelector('.lang-dd-toggle'); if(t) t.setAttribute('aria-expanded','false'); }
+  }
+  window.toggleLangMenu = function(e){
+    if(e){ e.preventDefault(); e.stopPropagation(); }
+    var dd = document.getElementById('langDropdown');
+    if(!dd) return;
+    var open = dd.classList.toggle('open');
+    var t = dd.querySelector('.lang-dd-toggle'); if(t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  document.addEventListener('click', function(ev){
+    var dd = document.getElementById('langDropdown');
+    if(dd && dd.classList.contains('open') && !dd.contains(ev.target)) closeMenu();
+  });
   window.setLang = function(lang, userClick){
     if(!CFG[lang]) lang = 'es';
     apply(lang);
+    closeMenu();
     try { localStorage.setItem('pwt_lang', lang); } catch(e){}
     if(userClick){ try { history.replaceState(null, '', CFG[lang].path + location.hash); } catch(e){} }
   };
@@ -557,10 +579,24 @@ function engineScript(){
 <!-- ================ FIN MOTOR MULTILINGÜE ================ -->`;
 }
 
+const LABELS = { es:'ES', en:'EN', fr:'FR', ru:'RU', zh:'中文', pt:'PT', hi:'HI' };
+const NAMES  = { es:'Español', en:'English', fr:'Français', ru:'Русский', zh:'中文', pt:'Português', hi:'हिन्दी' };
 function langSwitch(){
-  const labels = { es:'ES', en:'EN', fr:'FR', ru:'RU', zh:'中文', pt:'PT', hi:'HI' };
-  const btns = LANGS.map(l => `    <button class="lang-btn" data-lang="${l.key}" onclick="setLang('${l.key}', true)">${labels[l.key]}</button>`).join('\n');
-  return `<div class="lang-switch" role="group" aria-label="Language selector">\n${btns}\n  </div>`;
+  const btns = LANGS.map(l => `    <button class="lang-btn" data-lang="${l.key}" onclick="setLang('${l.key}', true)">${LABELS[l.key]}</button>`).join('\n');
+  const items = LANGS.map(l => `      <button class="lang-dd-item" data-lang="${l.key}" onclick="setLang('${l.key}', true)">${NAMES[l.key]}</button>`).join('\n');
+  return `<!-- ===== LANG SWITCHER ===== -->
+  <div class="lang-switch" role="group" aria-label="Language selector">
+${btns}
+  </div>
+  <div class="lang-dropdown" id="langDropdown">
+    <button class="lang-dd-toggle" onclick="toggleLangMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Language selector">
+      <span id="langCurrent">ES</span><span class="lang-caret">▾</span>
+    </button>
+    <div class="lang-dd-menu" id="langMenu">
+${items}
+    </div>
+  </div>
+  <!-- ===== FIN LANG SWITCHER ===== -->`;
 }
 
 // ===== Plantilla base (en/index.html) =====
@@ -586,8 +622,8 @@ function buildHtml(L){
   const block = hreflangBlock(url) + '\n' + `<script type="application/ld+json">\n${schemaFor(L)}\n</script>` +
     '\n<!-- ===== END SCHEMA JSON-LD ===== -->\n<!-- ===== FIN HREFLANG ===== -->';
   html = html.replace(/<!-- ===== HREFLANG \/ IDIOMAS ALTERNATIVOS ===== -->[\s\S]*?<!-- ===== FIN HREFLANG ===== -->/, block.replace(/\$/g,'$$$$'));
-  // selector de idioma
-  html = html.replace(/<div class="lang-switch"[\s\S]*?<\/div>/, langSwitch().replace(/\$/g,'$$$$'));
+  // selector de idioma (marcadores si ya existen, o el div original en el primer build)
+  html = html.replace(/<!-- ===== LANG SWITCHER ===== -->[\s\S]*?<!-- ===== FIN LANG SWITCHER ===== -->|<div class="lang-switch"[\s\S]*?<\/div>/, langSwitch().replace(/\$/g,'$$$$'));
   // motor multilingüe (reemplaza el bloque bilingüe o multilingüe previo)
   html = html.replace(/<!-- ={2,} MOTOR (?:BILINGÜE|MULTILINGÜE)[\s\S]*?FIN MOTOR (?:BILINGÜE|MULTILINGÜE) ={2,} -->/, engineScript().replace(/\$/g,'$$$$'));
   return html;
