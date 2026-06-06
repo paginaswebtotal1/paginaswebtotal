@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/fr/",
+  "inLanguage": "fr",
+  "description": "Agence SEO et GEO avec plus de 14 ans d'expérience. Nous positionnons sur Google, Bing et les moteurs génératifs d'IA : ChatGPT, Gemini, Perplexity et Google AI Overviews.",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Ranking Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Technique",
+          "description": "Audit approfondi, Crawl Budget, Core Web Vitals, données structurées Schema.org, architecture optimisée pour les moteurs et l'IA."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — Generative Engine Optimization",
+          "description": "Optimisation de contenu pour être cité par ChatGPT, Gemini, Google AI Overviews et Perplexity. Inclut llms.txt, schema avancé et structure citable."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AEO — Answer Engine Optimization",
+          "description": "Optimisation pour apparaître dans les réponses directes des moteurs de réponse. Structure question-réponse, données FAQPage et autorité thématique."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO de Contenu",
+          "description": "Recherche de mots-clés, cartographie sémantique, clusters de contenu et optimisation E-E-A-T pour une autorité thématique réelle."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Link Building",
+          "description": "Construction d'autorité avec des backlinks de qualité issus de médias spécialisés et de mentions de marque organiques."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Programmatique",
+          "description": "Création de pages à grande échelle grâce aux données structurées et à l'automatisation pour dominer les niches de longue traîne."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Analytique & Rapports",
+          "description": "Tableaux de bord en temps réel avec GA4 et Power BI. Mesure de la visibilité traditionnelle et générative avec rapports mensuels."
+        }
+      }
+    ]
+  }
+}

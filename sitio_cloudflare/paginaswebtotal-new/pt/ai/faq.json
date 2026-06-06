@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "url": "https://paginaswebtotal.com/pt/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é GEO (Generative Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO é a otimização do seu conteúdo para ser citado e recomendado por mecanismos de IA como ChatGPT, Gemini, Perplexity e Google AI Overviews. É a evolução do SEO para a era da busca generativa, onde 40% das consultas são resolvidas pela IA sem clique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre SEO e GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O SEO otimiza para aparecer nos resultados de busca tradicionais. O GEO otimiza para que seu conteúdo seja citado diretamente nas respostas geradas por IA. A Páginas Web Total trabalha ambos em paralelo com uma abordagem dupla SEO+GEO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Em quais países vocês operam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabalhamos com clientes em mais de 15 países, principalmente na Espanha, México, Colômbia, Argentina e Estados Unidos, executando estratégias de SEO e GEO em mais de 35 indústrias, incluindo e-commerce, SaaS, saúde e fintech."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para ver resultados em SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os primeiros resultados técnicos são observados em 4-8 semanas. Melhorias significativas no posicionamento orgânico ocorrem entre 3-6 meses. Para GEO, as citações em mecanismos de IA podem começar em 6-12 semanas após a implementação correta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é AEO (Answer Engine Optimization)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO é a otimização para aparecer em respostas diretas de mecanismos de resposta, como os snippets em destaque do Google, ChatGPT e Perplexity. Envolve estruturar o conteúdo em formato pergunta-resposta com dados estruturados, linguagem clara e autoridade temática comprovável."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês oferecem auditorias de SEO e GEO gratuitas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, oferecemos um orçamento e diagnóstico inicial gratuito. Entre em contato pelo chat para receber uma avaliação preliminar da sua situação atual em SEO e GEO sem custo, com resposta em menos de 5 minutos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como vocês otimizam para o Google AI Overviews?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Otimizamos implementando Schema.org avançado, estruturando o conteúdo para responder perguntas diretamente, melhorando os sinais E-E-A-T, obtendo citações de fontes autorizadas e garantindo que os bots do Google (Googlebot, Google-Extended) possam rastrear e indexar o site sem restrições."
+      }
+    }
+  ]
+}

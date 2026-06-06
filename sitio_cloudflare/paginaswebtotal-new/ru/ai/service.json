@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/ru/",
+  "inLanguage": "ru",
+  "description": "Агентство SEO и GEO с опытом более 14 лет. Продвигаем в Google, Bing и генеративных ИИ-системах: ChatGPT, Gemini, Perplexity и Google AI Overviews.",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Ranking Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Техническое SEO",
+          "description": "Глубокий аудит, Crawl Budget, Core Web Vitals, структурированные данные Schema.org, архитектура, оптимизированная под поисковики и ИИ."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — Generative Engine Optimization",
+          "description": "Оптимизация контента для цитирования в ChatGPT, Gemini, Google AI Overviews и Perplexity. Включает llms.txt, продвинутый schema и цитируемую структуру."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AEO — Answer Engine Optimization",
+          "description": "Оптимизация для появления в прямых ответах поисковых систем. Структура «вопрос-ответ», данные FAQPage и тематический авторитет."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Контентное SEO",
+          "description": "Исследование ключевых слов, семантическое картирование, контент-кластеры и оптимизация E-E-A-T для реального тематического авторитета."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Линкбилдинг",
+          "description": "Наращивание авторитета качественными бэклинками из специализированных СМИ и органичными упоминаниями бренда."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Программное SEO",
+          "description": "Создание страниц в масштабе с помощью структурированных данных и автоматизации для доминирования в низкочастотных нишах."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Аналитика и отчёты",
+          "description": "Дашборды в реальном времени на GA4 и Power BI. Измерение традиционной и генеративной видимости с ежемесячными отчётами."
+        }
+      }
+    ]
+  }
+}

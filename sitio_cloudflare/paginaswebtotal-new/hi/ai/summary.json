@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/hi/",
+  "description": "14+ वर्षों के अनुभव वाली SEO और GEO एजेंसी। हम Google, Bing और जनरेटिव AI इंजनों में रैंक कराते हैं: ChatGPT, Gemini, Perplexity और Google AI Overviews।",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "inLanguage": "hi",
+  "knowsAbout": [
+    "Technical SEO",
+    "Generative Engine Optimization",
+    "Answer Engine Optimization",
+    "Link Building",
+    "Content SEO",
+    "Programmatic SEO",
+    "Core Web Vitals",
+    "Schema.org",
+    "E-E-A-T"
+  ],
+  "slogan": "हम Google और AI में रैंक कराते हैं। मापने योग्य परिणाम, खोखले वादे नहीं।",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "availableLanguage": [
+      "Spanish",
+      "English",
+      "Hindi"
+    ],
+    "url": "https://paginaswebtotal.com/hi/#contacto"
+  },
+  "sameAs": [
+    "https://paginaswebtotal.com/",
+    "https://paginaswebtotal.com/en/",
+    "https://paginaswebtotal.com/fr/",
+    "https://paginaswebtotal.com/ru/",
+    "https://paginaswebtotal.com/zh/",
+    "https://paginaswebtotal.com/pt/"
+  ]
+}

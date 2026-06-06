@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Páginas Web Total",
+  "url": "https://paginaswebtotal.com/zh/",
+  "inLanguage": "zh-Hans",
+  "description": "拥有14年以上经验的SEO和GEO机构。我们在Google、Bing以及生成式AI引擎中获得排名：ChatGPT、Gemini、Perplexity和Google AI Overviews。",
+  "foundingDate": "2012",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Ranking Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "技术SEO",
+          "description": "深度审计、抓取预算、Core Web Vitals、Schema.org结构化数据、为搜索引擎和AI优化的架构。"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — 生成式引擎优化",
+          "description": "优化内容以被ChatGPT、Gemini、Google AI Overviews和Perplexity引用。包含llms.txt、高级schema和可引用结构。"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AEO — 答案引擎优化",
+          "description": "优化以出现在答案引擎的直接回答中。问答结构、FAQPage结构化数据和主题权威。"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "内容SEO",
+          "description": "关键词研究、语义映射、内容集群以及E-E-A-T优化，建立真实的主题权威。"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "外链建设",
+          "description": "通过来自专业媒体的优质外链和自然品牌提及来建立权威。"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "程序化SEO",
+          "description": "利用结构化数据和自动化大规模创建页面，主导长尾细分市场。"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "分析与报告",
+          "description": "使用GA4和Power BI的实时仪表板。通过月度报告衡量传统与生成式可见度。"
+        }
+      }
+    ]
+  }
+}
