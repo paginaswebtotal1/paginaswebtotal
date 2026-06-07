@@ -24,4 +24,5 @@
 - [Cotización gratuita](https://paginaswebtotal.com/#contacto): Chat con respuesta en menos de 5 minutos
 
 ## Optional
-- [llms-full.txt](https://paginaswebtotal.com/llms-full.txt)
+- [llms-full.txt](https://paginaswebtotal.com/llms-full.txt): versión extendida en texto plano
+- [llms-full.md](https://paginaswebtotal.com/llms-full.md): versión Markdown para agentes de IA

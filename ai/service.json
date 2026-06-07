@@ -7,6 +7,21 @@
   "description": "Agencia de SEO y GEO especializada en posicionamiento web orgánico y visibilidad en motores de búsqueda generativa.",
   "foundingDate": "2012",
   "areaServed": "Worldwide",
+  "capabilities": [
+    "SEO Técnico",
+    "GEO — Generative Engine Optimization",
+    "AEO — Answer Engine Optimization",
+    "SEO de Contenidos",
+    "Link Building",
+    "SEO Programático",
+    "Analítica y Reportes"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/paginaswebtotal/",
+    "https://www.instagram.com/paginaswebtotal/",
+    "https://www.facebook.com/PAGINASWEBTOTALSEO",
+    "https://www.youtube.com/@paginaswebtotal"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios de Posicionamiento Digital",

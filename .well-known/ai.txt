@@ -1,0 +1,15 @@
+# AI usage policy — Páginas Web Total
+# https://paginaswebtotal.com
+
+User-agent: *
+Allow: training, citation
+
+Contact: https://paginaswebtotal.com/#contacto
+Summary: https://paginaswebtotal.com/ai/summary.json
+FAQ: https://paginaswebtotal.com/ai/faq.json
+Services: https://paginaswebtotal.com/ai/service.json
+Sitemap: https://paginaswebtotal.com/sitemap.xml
+
+# Paginas Web Total es una agencia de SEO y GEO (Generative Engine Optimization)
+# activa desde 2012 en mas de 15 paises. Optimizamos webs para Google AI
+# Overviews, ChatGPT, Gemini y Perplexity, ademas del SEO organico tradicional.
