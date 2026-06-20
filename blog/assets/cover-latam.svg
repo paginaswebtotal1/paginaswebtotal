@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="SEO + GEO para entrar al mercado latinoamericano - Paginas Web Total">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0a0a0f"/><stop offset=".55" stop-color="#0d1326"/><stop offset="1" stop-color="#15082a"/>
+</linearGradient>
+<linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ccff00"/><stop offset=".55" stop-color="#b967ff"/><stop offset="1" stop-color="#ff2d75"/>
+</linearGradient>
+<radialGradient id="halo" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#b967ff" stop-opacity=".55"/><stop offset=".5" stop-color="#5b21b6" stop-opacity=".2"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+</radialGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+<feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="16"/></filter>
+</defs>
+
+<rect width="1200" height="630" fill="url(#bg)"/>
+<!-- textura de puntos sutil -->
+<g fill="#243049" opacity=".5">
+<circle cx="80" cy="500" r="2"/><circle cx="140" cy="540" r="2"/><circle cx="200" cy="500" r="2"/><circle cx="120" cy="470" r="2"/><circle cx="60" cy="560" r="2"/><circle cx="180" cy="560" r="2"/>
+</g>
+
+<!-- halo detrás del globo -->
+<circle cx="935" cy="315" r="250" fill="url(#halo)" filter="url(#soft)"/>
+
+<!-- globo -->
+<g transform="translate(935,315)">
+<circle r="185" fill="#0b1020" stroke="#22304d" stroke-width="2"/>
+<g fill="none" stroke="#243a5e" stroke-width="1.6" opacity=".9">
+<ellipse rx="185" ry="62"/><ellipse rx="185" ry="120"/><ellipse rx="62" ry="185"/><ellipse rx="120" ry="185"/>
+<line x1="-185" y1="0" x2="185" y2="0"/>
+</g>
+<circle r="185" fill="none" stroke="url(#grad)" stroke-width="3" stroke-dasharray="3 11" opacity=".85" filter="url(#glow)"/>
+<!-- arcos de conexión -->
+<g fill="none" stroke="url(#grad)" stroke-width="2.5" opacity=".9" filter="url(#glow)">
+<path d="M -120 -70 Q 40 -200 150 -60"/>
+<path d="M -60 110 Q 90 40 140 130"/>
+</g>
+<!-- nodos -->
+<g filter="url(#glow)">
+<circle cx="-120" cy="-70" r="7" fill="#ccff00"/>
+<circle cx="150" cy="-60" r="6" fill="#b967ff"/>
+<circle cx="140" cy="130" r="6" fill="#ccff00"/>
+<circle cx="-60" cy="110" r="5" fill="#ff2d75"/>
+<circle cx="90" cy="-150" r="4" fill="#ccff00"/>
+</g>
+<!-- pin LATAM -->
+<g transform="translate(20,30)" filter="url(#glow)">
+<path d="M0 0 C 26 0 42 18 42 40 C 42 68 0 102 0 102 C 0 102 -42 68 -42 40 C -42 18 -16 0 0 0 Z" fill="#ff2d75"/>
+<circle cx="0" cy="38" r="15" fill="#0a0a0f"/>
+</g>
+</g>
+
+<!-- texto -->
+<text x="88" y="232" font-family="Space Grotesk, sans-serif" font-size="98" font-weight="800" fill="url(#grad)" filter="url(#glow)">SEO + GEO</text>
+<text x="90" y="300" font-family="Plus Jakarta Sans, sans-serif" font-size="35" font-weight="700" fill="#e2e8f0">Entra al mercado latinoamericano</text>
+<text x="90" y="348" font-family="Plus Jakarta Sans, sans-serif" font-size="22" fill="#a0aec0">Posiciónate en Google y en la IA · ES · PT · EN</text>
+<rect x="90" y="404" width="150" height="4" rx="2" fill="url(#grad)"/>
+<text x="90" y="566" font-family="Space Grotesk, sans-serif" font-size="27" font-weight="700" fill="#ccff00">Páginas Web Total</text>
+</svg>
