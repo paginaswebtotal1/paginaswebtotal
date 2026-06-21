@@ -17,7 +17,7 @@ header.top{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;justify-
 .top .cta{background:var(--lime);color:#0a0a0f;font-weight:700;padding:.5rem 1rem;border-radius:8px;font-size:.85rem;white-space:nowrap}
 .top .cta:hover{text-decoration:none}
 /* Selector de idioma */
-.top .right{display:flex;align-items:center;gap:.5rem}
+.top .right{display:flex;align-items:center;gap:.9rem}
 .langsel{position:relative}
 .langsel summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;background:var(--surface);border:1px solid var(--line);color:var(--text);font-size:.85rem;font-weight:600;padding:.45rem .65rem;border-radius:8px;min-height:40px}
 .langsel summary::-webkit-details-marker{display:none}
@@ -27,6 +27,13 @@ header.top{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;justify-
 .langmenu a{display:block;color:var(--text);padding:.5rem .6rem;border-radius:7px;font-size:.92rem}
 .langmenu a:hover{background:var(--surface2);text-decoration:none;color:var(--lime)}
 .langmenu a.cur{color:var(--lime);font-weight:700}
+/* Idioma dentro del drawer (solo móvil) */
+.side-mobile-only{margin-top:1.1rem}
+.side-langs{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.side-langs a{font-size:.85rem;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:.35rem .6rem}
+.side-langs a:hover,.side-langs a.cur{color:var(--lime);border-color:var(--purple);text-decoration:none}
+@media(min-width:980px){.side-mobile-only{display:none}}
+@media(max-width:979px){body.has-nav .top .right{display:none}}
 /* Botón hamburguesa (solo móvil) */
 .menu-toggle{display:inline-flex;align-items:center;gap:.4rem;background:var(--surface);border:1px solid var(--line);color:var(--text);font-weight:700;font-size:.85rem;padding:.5rem .8rem;border-radius:8px;cursor:pointer;min-height:44px}
 #navToggle{display:none}
