@@ -22,7 +22,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
-    "availableLanguage": ["Spanish", "English"],
+    "availableLanguage": ["Spanish", "English", "Portuguese", "French", "Russian", "Chinese", "Hindi"],
     "url": "https://paginaswebtotal.com/#contacto"
   },
   "sameAs": [

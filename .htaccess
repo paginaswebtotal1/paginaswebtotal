@@ -2,3 +2,6 @@
 # Úsalo SOLO si NO subes la carpeta /en/. Requiere Apache/LiteSpeed (cPanel).
 RewriteEngine On
 RewriteRule ^en/?$ /index.html [L]
+
+# === Página 404 personalizada (devuelve código HTTP 404 real) ===
+ErrorDocument 404 /404.html
