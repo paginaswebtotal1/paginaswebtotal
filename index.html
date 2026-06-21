@@ -1567,5 +1567,9 @@ window.addEventListener('load', function(){
 })();
 </script>
 <!-- ================ FIN MOTOR MULTILINGÜE ================ -->
+<script>
+/* Oculta el badge de chat al llegar al footer para que no tape los enlaces */
+(function(){var b=document.querySelector('.float-badge'),f=document.querySelector('footer');if(b&&f&&'IntersectionObserver'in window){b.style.transition='opacity .25s';new IntersectionObserver(function(es){es.forEach(function(e){b.style.opacity=e.isIntersecting?'0':'1';b.style.pointerEvents=e.isIntersecting?'none':'auto';});}).observe(f);}})();
+</script>
 </body>
 </html>
