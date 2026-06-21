@@ -16,7 +16,7 @@
 <g filter="url(#glow)"><circle cx="-120" cy="-70" r="7" fill="#ccff00"/><circle cx="150" cy="-60" r="6" fill="#b967ff"/><circle cx="140" cy="130" r="6" fill="#ccff00"/><circle cx="-60" cy="110" r="5" fill="#ff2d75"/></g>
 <g transform="translate(20,30)" filter="url(#glow)"><path d="M0 0 C 26 0 42 18 42 40 C 42 68 0 102 0 102 C 0 102 -42 68 -42 40 C -42 18 -16 0 0 0 Z" fill="#ff2d75"/><circle cx="0" cy="38" r="15" fill="#0a0a0f"/></g>
 </g>
-<text x="88" y="232" font-family="Space Grotesk, sans-serif" font-size="98" font-weight="800" fill="url(#grad)" filter="url(#glow)">SEO + GEO</text>
+<text x="88" y="232" font-family="Space Grotesk, sans-serif" font-size="92" font-weight="800" fill="url(#grad)" filter="url(#glow)">SEO + GEO</text>
 <text x="90" y="300" font-family="Plus Jakarta Sans, sans-serif" font-size="33" font-weight="700" fill="#e2e8f0">Entre no mercado latino-americano</text>
 <text x="90" y="348" font-family="Plus Jakarta Sans, sans-serif" font-size="22" fill="#a0aec0">Apareça no Google e seja citado pela IA</text>
 <rect x="90" y="404" width="150" height="4" rx="2" fill="url(#grad)"/>
