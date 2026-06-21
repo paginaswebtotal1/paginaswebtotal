@@ -16,9 +16,20 @@
 - 14+ años de experiencia desde 2012
 - 35+ industrias ejecutadas: ecommerce, SaaS, salud, fintech y más
 
+## Blog
+- [Cómo entrar al mercado latinoamericano con SEO y GEO](https://paginaswebtotal.com/blog/seo-geo-entrar-mercado-latinoamericano/): guía para empresas extranjeras que quieren vender en Latinoamérica con un partner local de SEO + GEO
+- [Herramienta gratis para medir tu visibilidad en la IA (GEO)](https://paginaswebtotal.com/blog/medir-geo-herramienta-gratis/): audita gratis cómo te ven ChatGPT, Gemini y Perplexity
+- [SEO Internacional](https://paginaswebtotal.com/blog/seo-internacional/): categoría sobre posicionamiento en otros mercados (hreflang, localización, visibilidad IA por país)
+- [GEO y Visibilidad en la IA](https://paginaswebtotal.com/blog/geo/): categoría sobre cómo ser citado por la inteligencia artificial
+
 ## Idiomas disponibles
 - [Español](https://paginaswebtotal.com/): versión principal
-- [English](https://paginaswebtotal.com/en/): English version
+- [English](https://paginaswebtotal.com/en/)
+- [Português (Brasil)](https://paginaswebtotal.com/pt/)
+- [Français](https://paginaswebtotal.com/fr/)
+- [Русский](https://paginaswebtotal.com/ru/)
+- [中文](https://paginaswebtotal.com/zh/)
+- [हिन्दी](https://paginaswebtotal.com/hi/)
 
 ## Contacto
 - [Cotización gratuita](https://paginaswebtotal.com/#contacto): Chat con respuesta en menos de 5 minutos
